@@ -308,7 +308,7 @@ Zahvaljujem se mentorici doc. dr. Miri Trebar za vso pomoč in nasvete pri izdel
 % seznam kratic
 
 \chapter*{Seznam uporabljenih kratic}  % spremenil Solina, da predolge vrstice ne gredo preko desnega roba
-
+% todo naredi tabelo v dve strani
 \noindent\begin{tabular}{p{0.2\textwidth}|p{.35\textwidth}|p{.35\textwidth}}    % po potrebi razširi prvo kolono tabele na račun drugih dveh!
   {\bf kratica} & {\bf angleško}                             & {\bf slovensko} \\ \hline
 %  {\bf API} & Application Programming Interface & aplikacijski programski vmesnik \\
@@ -323,6 +323,7 @@ Zahvaljujem se mentorici doc. dr. Miri Trebar za vso pomoč in nasvete pri izdel
 %  {\bf IAAA} & Identification, Authentication, Authorization and Accounting & varnostni koncepti: identifikacija, avtentikacija, avtorizacija in odgovornost \\
 %  {\bf JSON} & JavaScript Object Notation & objektna notacija za JavaScript \\
   {\bf MVC} & Model--view--controller & model--pogled--krmilnik \\
+  {\bf NFC} & Near Field Communication & tehnologija komunikacije kratkega dosega \\
   {\bf PDF} & Portable Document Format & format prenosnega dokumenta \\
   {\bf PHP} & Personal Home Page (PHP: Hypertext Preprocessor) & skriptni programski jezik \\
   {\bf REST} & Representational state transfer & predstavitveni prenos stanja \\
@@ -403,16 +404,46 @@ V poglavju na kratko predstavimo hladno verigo, obstoječe spletne rešitve in o
 
 \section{Hladna veriga}
 
-TODO: -	Kratka predstavitev hladne verige (obvezna literatura)
+Zahteve potrošnikov po raznoliki in kvalitetni hrani se iz leta v leto povečuje s tem pa se povečujejo tudi zahteve po prevozu in shranjevanju ohlajenih in zmrzjenih živil. Živila lahko potujejo preko celega planeta, preden pridejo do končnega uporabnika. Čez celoten logističen proces je potrebno zagotavljati nizke temperaturne pogoje, ki ohranjajo varnost in boljšo kakovost živila. Temu procesu rečemo hladna veriga.
+Hladna veriga torej pomeni vzdrževanje priporočene temperature, da zagotovimo rok trajanja živila \cite{hladna-veriga}.
+
+Pri upravljanju tega procesa gre lahko marsikaj narobe, zlasti pri vzdrževanju priporočene temperature med logističnimi dogodki od proizvodnje, prevzema blaga, prevoza, skladiščenja, razdeljevanja, distribucije in dostave do končnega uporabnika, zato je potrebno celoten proces stalno nadzirati in optimizirati.
+
 
 \section{Obstoječe rešitve}
 
-TODO: - Kratka predstavitev obstoječih rešitev na spletu (vsaj dve rešitvi)
+Za zagotavljanje hladne verige odigrajo ključno vlogo sistemi za zajem podatkov in aplikacije za analizo in vizualizacijo tovrstnih podatkov. 
+
+Na trgu jih je kar nekaj, večina od njih pa ne rešuje problema o različnih vhodnih podatkovnih formatih.
+
+Spodaj sta na kratko opisana dva primera.
+
+
+\noindent \subparagraph{\textbf{Spletna aplikacija v okviru magistrskega dela Senzorski moduli NFC in varnost podatkov, Dean Črnigoj}}: 
+Omogoča analizo in pregled senzorskih podatkov tipa TIDA na način kjer se meritve pošiljajo na strežnik sproti ali na zahtevo. Sistem podpira še zaznavanje nepričakovanih dogodkov, obveščanje, izvoz podatkov in konfiguracijo senzorskega sistema NFC. Spletna aplikacija je bila razvita kot del magistrskega dela, ki prikaže uporabo celotnega sistema za potrebe hladne verige \cite{magistrska-crnigoj}.
+
+
+\noindent \subparagraph{\textbf{Spletna aplikacija Coldchainview}}:
+Optimizirana za delo z moduli Euroscan. Omogoča sprotno spremljanje in upravljanje izdelkov različnih panog znotraj hladne verige. Podprte so še naslednje funkcionalnosti: grafični prikaz podatkov, izvoz podatkov v format PDF in XLS, pošiljanje samodejnih alarmov preko e-pošte in SMS-ja, pregled in analiza posameznih senzorskih lokacij ter konfiguracija hladilnih enot.
+Spletna aplikacija je last podjetja ORBCOMM® in se nahaja na spletnem naslovu \\ \verb=http://www.coldchainview.com=. Njena uporaba je plačljiva, zato aplikacije nismo preizkusili, ampak smo se sklicevali na proizvajalcev opis produkta. \cite{coldchainview}
+ 
+\clearpage
 
 \section{Senzorski podatki}
 
 Na področju senzorskih meritev je različnih podatkovnih modelov ravno toliko kot imamo različnih senzorskih naprav. Spodaj smo opisali glavne lastnosti le dveh s katerim smo se srečali pri uporabi podatkov iz hladne verige.
 
+\vspace{5mm}
+
+Merilna naprava TIDA je senzorski modul NFC z zelo nizko porabo energije proizvajalca Texas Instruments. Deluje kot naprava za shranjevanje podatkov iz treh različnih senzorjev: temperature (T), svetlobe (E) in relativne vlage (RH) (slika~\ref{merilna-naprava-tida}) \cite{magistrska-crnigoj}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{slike/merilna-naprava-tida.png}
+\end{center}
+\caption{Merilna naprava TIDA}
+\label{merilna-naprava-tida}
+\end{figure}
 
 \begin{description}
 \item[Podatkovni model meritvene naprave TIDA]:
@@ -427,7 +458,18 @@ Na področju senzorskih meritev je različnih podatkovnih modelov ravno toliko k
 \end{itemize}
 \end{description}
 
-\textcolor{orange}{\textit{ \#\# TODO: kratek opis merilnega sistema TIDA.~\cite{magistrska-crnigoj}}} \\
+\clearpage
+
+Merilna naprava RHT10 z USB vmesnikom za enostavno namestitev in prenos podatkov. Beleži senzorske podatke o temperaturi (T) in relativni vlagi (RH). 
+Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{merilna-naprava-rht10}) \cite{rht10-dialogger}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{slike/merilna-naprava-rht10.png}
+\end{center}
+\caption{Merilna naprava RHT10}
+\label{merilna-naprava-rht10}
+\end{figure}
 
 \begin{description}
 \item[Podatkovni model meritvene naprave RHT10]:
@@ -442,9 +484,8 @@ Na področju senzorskih meritev je različnih podatkovnih modelov ravno toliko k
 \end{itemize}
 \end{description}
 
-\textcolor{orange}{\textit{ \#\# TODO: kratek opis merilnega sistema RHT10.~\cite{rht10-dialogger}}} \\
 
-
+\clearpage
 
 \noindent Tretji podatkovni model smo si za potrebe simuliranja in testiranja meritev izmislili sami. Zaradi ročno ustvarjenih podatkov smo ta tip naprave poimenovali kar 'Generated'.
 
@@ -500,7 +541,7 @@ Pred izvedbo smo definirali zahteve delovanja spletne aplikacije, ki smo jih raz
 
 \item vloge uporabnikov so razdeljene na administratorje (ang. Administrator), urednike (ang. Editor) in obiskovalce (ang. User),  
 
-\item administrator naj ima dostop do vseh funkcionalnosti aplikacije vključno z funkcionalnostmi povezane z upravljanje z uporabniki (odobritev novega uporabnika in spreminjanje njegove vloge),
+\item administrator naj ima dostop do vseh funkcionalnosti aplikacije vključno z funkcionalnostmi povezane z upravljanje z uporabniki (potrditev novega uporabnika in spreminjanje njegove vloge),
 
 \item urednik naj ima:
 	\begin{itemize}
@@ -521,23 +562,65 @@ Pred izvedbo smo definirali zahteve delovanja spletne aplikacije, ki smo jih raz
 
 \item obiskovalec naj ima:
 	\begin{itemize}
-		\item celoten seznam, možnost iskanja in filtriranja vseh uvoženih meritev,
+		\item celoten seznam, možnost iskanja in filtriranja vseh uvoženih ali generiranih meritev,
 		
 		\item vidi podroben prikaz in analizo podatkov o meritvi,
 		
-		\item na podlagi temperature sistem  napove preostalo dobo uporabnosti živila.
+		\item na podlagi temperature sistem napove preostalo dobo uporabnosti živila.
 	\end{itemize}
 	
 \item uredniki in obiskovalci se morajo pred prvo uporabo registrirati z naslednjimi podatki: ime in priimek, e-pošta in geslo,
 
 \item po registraciji mora urednika ali obiskovalca potrditi administrator,
 
+\item administrator prejme obestilo o novem uporabniku na e-pošto,
+
+\item potrjeni uporabnik prejme obvestilo na registracijsko e-pošto,
+
+\item sistem naj prikaže čas trajanja meritve po lokacijah, izračuna največje in najmanjše vrednosti in obvesti o preseženih proporočenih vrednostih v posamezni meritvi,
+
 \item za potrebe simuliranja meritev in lažjega testiranja aplikacije razvijemo generator podatkov.
 
-\item \color{orange} \textit{ \#\# TODO še preostale + opis dobe uporabnosti CSIDA, SAL}
 \end{itemize}
 
-\clearpage
+
+\subsection{Modela za izračun preostale dobe uporabnosti}
+\label{modela-za-izracun-sl}
+
+V diplomski nalogi smo za izračun preostale dobe uporabnosti živila za primerjavo uporabili dva različna modela. Na kratko sta opisana spodaj.
+
+\begin{description}
+
+	\item[Model CSIRO] (Commonwealth Scientic and Industrial Research) : Razvit v avstrijski organizaciji po kateri je dobil tudi ime, definira preposto matematično enačbo za razvoj bakterij v živilu \cite{CSIRO-organizacija}.
+	
+	\begin{align}
+		k = (0,1T + 1)^2				\\
+       	SL = SL_{ref} - t \times k
+	\end{align}
+	
+	Enačba za izračun preostale dobe uporabnosti po modelu CSIRO.
+	
+	\item[Model SAL] : Uporaben predvsem za morsko hrano. Uporablja tabelo, ki ima za vsako temperaturo navedeno koliko časa je živilo uporabno, če je ves čas hranjena na taki temperaturi \cite{magistrska-marolt}. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ll|ll|ll|ll}
+T(°C) & SL(d) & T(°C) & SL(d) & T(°C) & SL(d) & T(°C) & SL(d) \\ \hline
+0     & 8     & 8     & 2,7   & 16    & 1,1   & 24    & 0,75  \\
+1     & 6,5   & 9     & 2,35  & 17    & 1     & 25    & 0,73  \\
+2     & 5     & 10    & 2     & 18    & 0,92  & 26    & 0,71  \\
+3     & 4     & 11    & 1,75  & 19    & 0,89  & 27    & 0,69  \\
+4     & 3,5   & 12    & 1,5   & 20    & 0,85  & 28    & 0,67  \\
+5     & 3,35  & 13    & 1,4   & 21    & 0,83  & 29    & 0,62  \\
+6     & 3,15  & 14    & 1,3   & 22    & 0,8   & 30    & 0,6   \\
+7     & 3     & 15    & 1,2   & 23    & 0,78  &       &      
+\end{tabular}
+\caption{Vrednosti v modelu SAL, ki se uporablja za napovedovanje dobe uporabnosti.}
+\label{tab:tabela-sal}
+\end{center}
+\end{table}
+	
+\end{description}
 
 
 
@@ -557,11 +640,24 @@ Za zadnji sklop varnosti beležimo še dnevnik prijav uporabnikov. Pri tem nam j
 
 Ena iz med pomembnih nefunkcionalnih zahtev je tudi obravnava napak v sistemu. Obravnavamo strežniške (5xx) in odjemalčeve napake (4xx). 
 
-\textcolor{orange}{\textit{\#\# TODO opiši par primerov 4xx in 5xx napake}} \\
 
 Na nivoju ogrodja imamo zagotovljeno avtomatsko beleženje napak v log datoteko. V sami predlogi pa imamo poskrbljeno tudi za izpis napake uporabniku.
 
-\textcolor{orange}{\textit{\#\# TODO prilepi primer kode izpisa uporabniku}} \\
+Primer izvorne kode za izpis napak uporabniku:
+
+\begin{lstlisting}[language=PHP, style=mystyle]
+        <div class="alert alert-danger" role="alert">
+            @if ($errors->any())
+            <ul id="errors">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
+\end{lstlisting}
+
+\vspace{5mm}
 
 \noindent \textbf{Prilagodljiva grafična podoba}
 
@@ -570,7 +666,6 @@ Grafični uporabniški vmesnik smo poizkušali izbrati preprost in pregleden, te
 Grafične komponente so sestavljene iz kode HTML, datoteke CSS, slik in knjižnic Javascript.
 Primer knjižnice Javascript, ki skrbi za izris interaktivnih grafov v aplikaciji, je {\tt highcharts.js}~\cite{hightchars-js}.
 
-\textcolor{orange}{\textit{\#\# TODO primer kode grafične kompomente – html/css+js}} \\
 
 
 
@@ -693,7 +788,7 @@ V fazi načrtovanja smo naredili prototip aplikacije oziroma zaslonske predloge 
 
 Aplikacija kasneje vsebuje še prikazno sliko vloge in osnovne informacije uporabnika, logotip ter sekundarno navigacijo, ki ponazarja, kje se nahajamo na strani. Omenjene funkcionalnosti so bile izpuščene iz prototipa, saj niso igrale pomembno vlogo.
 
-\begin{figure}[b]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{slike/registration_and_Login-wireframe.png}
 \end{center}
@@ -1154,8 +1249,8 @@ Zgoraj na sliki~\ref{ss-record-page-zoom} vidimo, da smo označili časovni inte
 
 \section{Napoved preostale dobe uporabnosti izbranega živila}
 
-V aplikaciji smo za izračun dobe uporabnosti živila za primerjavo uporabili dva različna modela.
-Model CSIRO (Commonwealth Scientic and Industrial Research Organisation) \cite{CSIRO-organizacija}, razvit v avstralski organizaciji po kateri je dobil tudi ime, definira preprosto matematično enačbo za razvoj bakterij v živilu med tem ko model SAL \cite{magistrska-marolt}, uporaben predvsem za morsko hrano, uporablja tabelo, ki ima za vsako temperaturo navedeno koliko časa je živilo uporabno.
+V aplikaciji smo za izračun dobe uporabnosti živila implementirali modela, ki sta opisana v poglavju \ref{modela-za-izracun-sl}.
+
 
 Funkciji za izračun preostale dobe uporabnosti živila po modelu CSIRO in SAL:
 
@@ -1211,9 +1306,10 @@ Do strani z nastavitvami (\sn{Settings}) imajo dostop uporabniki z vlogo adminis
 \label{ss-settings-products}
 \end{figure}
 
+\clearpage
+
 Na sliki~\ref{ss-settings-products} prvem stolpcu je definirano ime (\sn{Name}), v drugem referenčna doba uporabnosti v dnevih (\sn{SL-Reference (Days)}), v tretjem območje priporočene temperature hranjenja (\sn{Storage T (°C)}) in v zadnjem opis živila. Z modro barvo smo odebelili pomembnejše informacije. Na koncu vsake vrstice se nahajata ikoni za urejanje in brisanje živila. 
 
-\newpage
 
 \section{Pregled in urejanje lokacij}
 
@@ -1231,6 +1327,9 @@ V tabelaričnem pogledu so na strani z nastavitvami (\sn{Settings}) v drugem raz
 Dialog iz slike~\ref{ss-settings-location} odpremo s klikom na ikono za urejanje pri posamezni lokaciji. Spreminjamo lahko podatke kot so ime (\sn{Name*}), območje delovne temperature (\sn{Storage T*}) in opcijsko opis lokacije. S klikom na gumb shrani (\sn{Save}) se zapre dialog in prikaže besedilo o uspešnosti shranitve.
 
 
+\clearpage
+
+
 \section{Pregled senzorskih naprav}
 
 V aplikaciji smo pri uvozu meritev upoštevali dva različna formata datoteke, ki sta rezultat meritvenih naprav TIDA \cite{tida-dialogger} in RHT10 \cite{rht10-dialogger}.
@@ -1246,7 +1345,9 @@ Tako imamo v aplikaciji podprte naslednje tri tipe naprav: TIDA, RHT10 in Genera
 \label{ss-settings-devices}
 \end{figure}
 
-\newpage
+
+\clearpage
+
 
 \section{Pregled in potrditev uporabnikov}
 
