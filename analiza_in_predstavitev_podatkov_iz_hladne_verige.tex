@@ -329,7 +329,7 @@ Zahvaljujem se mentorici doc. dr. Miri Trebar za vso pomoč in nasvete pri izdel
   {\bf REST} & Representational state transfer & predstavitveni prenos stanja \\
 %  {\bf SAL} & ??? & ??? \\
 %  {\bf SL} 	& Shelf Life & doba uporabnosti \\
-  {\bf SQL} & Structured Query Language & strukturiran poizvedovalni jezik \\
+%  {\bf SQL} & Structured Query Language & strukturiran poizvedovalni jezik \\
   {\bf URL} & Uniform Resource Locator & enolični krajevnik vira \\
 %  \dots & \dots & \dots \\
 \end{tabular}
@@ -507,19 +507,56 @@ Poglavje opisuje uporabljene tehnologije pri razvoju naše spletne aplikacije.
 
 \section{Podatkovna baza}
 
-TBD opis mysql baze in pregled sorodnih baz
+Na področju informacijskih sistemov je osnovni vir informacij podatkovna baza. Podatkovna baza je zbirka shem, tabel, poizvedb, poročil, pogledov in drugih objektov. Upravljamo jo preko sistema za upravljanje baz podatkov. V grobem ločimo relacijske od nerelacijskih. Prve so najbolj razširjene in temeljijo na množici relacij, kjer je vsaka relacija tabela z vrsticami in stolpci. Nerelacijske opredeljuje visoka fleksibilnost, katero dosežejo tako, da nimajo v naprej definirane sheme.
+Primeri sistemov za upravljanje relacijskih baz podatkov so MySQL, Oracle, PostgreSQL, nerelacijskih pa MongoDB, Redis, Elasticsearch \cite{podatkovne-baze}.
+
+V naši diplomski nalogi smo uporabili relacijsko podatkovno bazo z sistemom za upravljanje MySQL \cite{mysql-baza}. Do podatkov smo dostopali preko spletnega vmesnika \verb=phpMyAdmin= \cite{phpmyadmin-framework}.
 
 \section{Spletni strežnik}
 
-TBD nasplošno o strežnikih, apache, php, artisan cli
+Spletni strežnik je računalniški sistem, ki obdeluje zahteve preko protokola HTTP.
+Njegove osnovne naloge so shranjevanje, obdelava in pošiljanje spletnih strani odjemalcem. Tipični primeri spletnih strežnikov so Apache, Nginx, Microsoft IIS. Vsak iz med njih podpira določene skriptne jezike kot so PHP, ASP, JavaScript \cite{spletni-strezniki}.
+
+V diplomski nalogi smo za razvoj spletne aplikacije izbrali skriptni jezik PHP, ki ima od verzije 5.4.0 vgrajen spletni strežnik za lokalni razvoj, katerega na zahtevo zaženemo preko ukazne vrstice s spodnjim ukazom: 
+
+\begin{verbatim}
+php artisan serve
+\end{verbatim}
 
 \section{Spletna aplikacija}
 
-TBD opis ogrodja Laravel, predloga HTML, spletna storitev REST, jQuery
+Skupek dinamičnih spletnih strani, ki omogočajo izvajanje akcij in opravil katerih spremembe se odražajo nad podatki, imenujemo spletna aplikacija. Glavne lastnosti le-te so neodvisnost od operacijskega sistema, dostopnost, centraliziran nazor in varnost. Zaradi omenjenih lastnosti je potreba po hitrem razvoju spletnih aplikacij vse večja. V ta namen razvijalci uporabljajo ogrodja, ki imajo temeljne gradnike že v naprej definirane.
+
+Ogrodje Laravel je v zadnjih letih popularno pri razvijalcih v programskem jeziku PHP. Njegov začetek beležimo junija 2011 z prvo verzijo, danes pa je aktualna že šesta, ki sledi zadnjim standardom na področju spletnega razvoja \cite{laravel-main-page}. 
+
+\begin{description}
+	
+	\item[Nekaj glavnih gradnikov omenjenega ogrodja] :
+	
+	\begin{itemize}
+		\item arhitektura MVC,
+		\item vse potrebno za delo z avtentikacijo uporabnika,
+		\item konfigurirana obravnava napak in izjem,
+		\item odpravljanje najpogostejših tehničnih ranljivosti,
+		\item podpora za integracijo predpomnilniških sistemov,
+		\item konfiguracija usmerjanja URL-jev,
+		\item podpora za integracijo e-poštnih storitev.
+		
+	\end{itemize}
+\end{description}
+
+Za hitrejši razvoj spletnih aplikacij v primerih, ko potrebujemo napredne grafične komponente, razvijalci dodatno izbirajo po predlogih HTML. Predloga HTML običajno vsebuje grafične komponente kot so gumbi, opozorilni boksi, tipografski elementi, spletni obrazci, grafi in tabele.
+
+Dinamična komunikacija med ogrodjem in grafičnimi komponentami v spletni aplikaciji običajno poteka v obliki spletne storitve REST. Njen namen je definiranje principov, ki opisuje na kakšen način so viri definirani in naslovljeni, pri katerem se uporabljajo metode protokola HTTP. Te metode so lahko GET, POST, PUT ali DELETE, vsak vir podatkov pa ima svoj URL \cite{protokol-rest}.
+
 
 \section{Programska oprema}
 
-TBD opis sistema za nadzor različic - Git, opis sistema za nadzor nalog - Github, programsko orodje Intellij Idea
+Pri razvoju spletne aplikacije smo uporabili programsko orodje Intellij IDEA podjetja jetBrains. Produkt je na voljo v plačljivi in zastonjski verziji, namenjen Java razvijalcev, med drugim pa nudi podporo tudi za programski jezik PHP. Omogoča tudi integracijo s sistemi za nadzor verzij programske kode, v našem primeru s sistemom Git \cite{intellij-idea}.
+
+Git je sistem za upravljanje z izvorno kodo, s katerim lahko nadzorujemo spremembe, omogoča sodelovanje več razvijalcev na istem projektu, obenem pa nam kadarkoli omogoča obnovitev kode na prejšnjo - zgodnejše stanje \cite{sistem-git}.
+
+Za beleženje in vodenje nalog v okviru diplomske naloge smo uporabili spletni servis GitHub. V osnovi omenjeni servis ponuja repozitorije Git v oblaku, omogoča pa tudi distribuirano upravljanje z izvorno kodo, kontrolo dostopa in storitve za kolaboracijski razvoj preko spletnega grafičnega vmesnika \cite{github}.
 
 
 
@@ -594,8 +631,8 @@ V diplomski nalogi smo za izračun preostale dobe uporabnosti živila za primerj
 	\item[Model CSIRO] (Commonwealth Scientic and Industrial Research) : Razvit v avstrijski organizaciji po kateri je dobil tudi ime, definira preposto matematično enačbo za razvoj bakterij v živilu \cite{CSIRO-organizacija}.
 	
 	\begin{align}
-		k = (0,1T + 1)^2				\\
-       	SL = SL_{ref} - t \times k
+		k = (0,1T + 1)^2				\nonumber \\
+       	SL = SL_{ref} - t \times k		\nonumber
 	\end{align}
 	
 	Enačba za izračun preostale dobe uporabnosti po modelu CSIRO.
@@ -673,7 +710,7 @@ Primer knjižnice Javascript, ki skrbi za izris interaktivnih grafov v aplikacij
 
 \subsection{Podatkovni model}
 
-Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. S pomočjo ER diagrama in preslikave relacij v Migrations funkcionalnost ogrodja Laravel~\cite{laravel-migrations}, smo ustvarili tabele v podatkovni bazi MySql. Na kocu programske rešitve je bil podatkovni model sestavljen iz enajstih tabel. Te so prikazane na sliki~\ref{database-model}.
+Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. S pomočjo ER diagrama in preslikave relacij v Migrations funkcionalnost ogrodja Laravel~\cite{laravel-migrations}, smo ustvarili tabele v podatkovni bazi MySQL. Na kocu programske rešitve je bil podatkovni model sestavljen iz enajstih tabel. Te so prikazane na sliki~\ref{database-model}.
 
 \begin{figure}[t]
 \begin{center}
@@ -966,7 +1003,7 @@ Poglavje podrobno opisuje bistvene funkcionalnosti spletne aplikacije. V začetk
 
 \section{Podatkovna baza}
 
-Za vir podatkov naše spletne aplikacije smo izbrali podatkovno bazo MySql in v njej kreirali shemo. Znotraj sheme smo definirali tabele na podlagi modelov, ki pa so bili narejeni po vzoru ER diagrama iz prejšnjega poglavja.
+Za vir podatkov naše spletne aplikacije smo izbrali podatkovno bazo MySQL in v njej kreirali shemo. Znotraj sheme smo definirali tabele na podlagi modelov, ki pa so bili narejeni po vzoru ER diagrama iz prejšnjega poglavja.
  
 Za implementacijo tabel smo si pomagali s tehnologijo Migrations znotraj ogrodja Laravel. Migrations je zapis definicije tabele v obliki datoteke PHP, ki nam omogoča lažje verzijoniranje, spreminjanje in deljenje med razvojnimi okolji \cite{laravel-migrations}.
 
@@ -1381,7 +1418,7 @@ Za vsebinsko testiranje meritev pa smo razvili funkcionalnost posebej namenjeno 
 
 Za uporabo spletne aplikacije ostalim uporabnikom, smo aplikacijo prenesli na javno dostopno gostovanje. 
 
-Najprej smo v administrativnem vmesniku ponudnika gostovanja kreirali podatkovno bazo, kjer smo z pomočjo orodja \verb=phpmyadmin= \cite{phpmyadmin-framework} uvozili podatkovno shemo in podatke iz lokalnega okolja (slika~\ref{ss-admim-gui}). Za tem smo preko protokola za prenos datotek (FTP) prenesli še ostale datoteke spletne strani.
+Najprej smo v administrativnem vmesniku ponudnika gostovanja kreirali podatkovno bazo, kjer smo z pomočjo orodja \verb=phpMyAdmin= \cite{phpmyadmin-framework} uvozili podatkovno shemo in podatke iz lokalnega okolja (slika~\ref{ss-admim-gui}). Za tem smo preko protokola za prenos datotek (FTP) prenesli še ostale datoteke spletne strani.
 
 \begin{figure}[h]
 \begin{center}
