@@ -207,7 +207,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 \selectlanguage{slovene}
 \frontmatter
@@ -301,18 +300,17 @@ Zahvaljujem se mentorici doc. dr. Miri Trebar za vso pomoč in nasvete pri izdel
 \tableofcontents{}
 
 
-% prazna stran
-\clearemptydoublepage
+% tole naj bi mi kao clearalo empty page pa mi ne !
+\let\cleardoublepage=\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % seznam kratic
 
 \chapter*{Seznam uporabljenih kratic}  % spremenil Solina, da predolge vrstice ne gredo preko desnega roba
-% todo naredi tabelo v dve strani
 \noindent\begin{tabular}{p{0.2\textwidth}|p{.35\textwidth}|p{.35\textwidth}}    % po potrebi razširi prvo kolono tabele na račun drugih dveh!
   {\bf kratica} & {\bf angleško}                             & {\bf slovensko} \\ \hline
 %  {\bf API} & Application Programming Interface & aplikacijski programski vmesnik \\
-  {\bf CSIRO} & Commonwealth Scientic and Industrial Research Organisation & Commonwealth Scientic and Industrial Research Organisation \\
+  {\bf CSIRO} & Commonwealth Scientic and Industrial Research Organisation & Commonwealth Scientic and Industrial Research Organisation \\
   {\bf CSS} & Cascading Style Sheets & predloge, ki določajo izgled spletnih strani \\
   {\bf CSV} & Comma Separated Values & podatki so v datoteki ločeni z vejico \\
   {\bf ER diagram} & Entity Relationship Diagram & entitetno relacijski diagram \\
@@ -400,7 +398,7 @@ V diplomski nalogi najprej opišemo senzorske podatke s katerimi razpolagamo v a
 \chapter{Pregled področja}
 \label{pregled-podrocja}
 
-V poglavju na kratko predstavimo hladno verigo, obstoječe spletne rešitve in opišemo senzorske podatke, ki so uporabljene v diplomski nalogi.
+V poglavju na kratko predstavimo hladno verigo, obstoječe spletne rešitve in opišemo senzorske podatke, ki so uporabljeni v diplomski nalogi.
 
 \section{Hladna veriga}
 
@@ -424,13 +422,13 @@ Spletna aplikacija je last podjetja ORBCOMM®\footnote
 {https://www.orbcomm.com/eu/solutions/web-applications/coldchainview}. Njena uporaba je plačljiva, zato aplikacije nismo preizkusili, ampak smo se sklicevali na proizvajalčev opis produkta \cite{coldchainview}.
 
 \subparagraph{\textbf{Spletna aplikacija RSLink:}}  
-Slovenska komercialna rešitev podjetja RSLabs d.o.o., ki ima omogočen postopek zajemanja podatkov iz enega tipa senzorja brezžično v sistem. Omogoča enostaven pregled, obveščanje o dogajanju in analizo podatkov kot oblačno storitev\footnote{https://rs-labs.si/rslink} \cite{rslink}.
+Slovenska komercialna rešitev podjetja RSLabs d.o.o., ki ima omogočen postopek zajema in pošiljanja senzorskih podatkov iz merilnega mesta do zapisovalnika v brezžični tehnologiji. Omogoča enostaven pregled, obveščanje o dogajanju in analizo podatkov kot oblačno storitev\footnote{https://rs-labs.si/rslink} \cite{rslink}.
+
 
 \subparagraph{\textbf{Spletna aplikacija v okviru magistrskega dela Senzorski moduli NFC in varnost podatkov:}}  
-Omogoča analizo in pregled senzorskih podatkov tipa TIDA na način kjer se meritve pošiljajo na strežnik sproti ali na zahtevo. Sistem podpira še zaznavanje nepričakovanih dogodkov, obveščanje, izvoz podatkov in konfiguracijo senzorskega sistema NFC. Spletna aplikacija je bila razvita kot del magistrskega dela, ki prikaže uporabo celotnega sistema za potrebe hladne verige \cite{magistrska-crnigoj}.
+Omogoča analizo in pregled senzorskih podatkov tipa TIDA na način kjer se meritve pošiljajo na strežnik sproti ali na zahtevo. Sistem podpira še zaznavanje nepričakovanih dogodkov, obveščanje, izvoz podatkov in konfiguracijo senzorskega sistema NFC (Near Field Communica-
+tion). Spletna aplikacija je bila razvita kot del magistrskega dela, ki prikaže uporabo celotnega sistema za potrebe hladne verige \cite{magistrska-crnigoj}.
 
- 
-\clearpage
 
 \section{Senzorski podatki}
 
@@ -444,7 +442,7 @@ Merilna naprava TIDA-00524 je senzorski modul NFC z zelo nizko porabo energije p
 \begin{center}
 \includegraphics[width=0.3\textwidth]{slike/merilna-naprava-tida.png}
 \end{center}
-\caption{Merilna naprava TIDA-00524.}
+\caption{Merilna naprava TIDA-00524 \cite{dialoger-tida}.}
 \label{merilna-naprava-tida}
 \end{figure}
 
@@ -463,7 +461,6 @@ Merilna naprava TIDA-00524 je senzorski modul NFC z zelo nizko porabo energije p
 \end{itemize}
 \end{description}
 
-\clearpage
 
 Merilna naprava RHT10 z USB vmesnikom za enostavno namestitev in prenos podatkov. Beleži senzorske podatke o temperaturi (T) in relativni vlagi (RH). 
 Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{merilna-naprava-rht10}) \cite{rht10-dialogger}.
@@ -472,9 +469,10 @@ Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{meri
 \begin{center}
 \includegraphics[width=0.3\textwidth]{slike/merilna-naprava-rht10.png}
 \end{center}
-\caption{Merilna naprava RHT10.}
+\caption{Merilna naprava RHT10 \cite{rht10-dialogger}}
 \label{merilna-naprava-rht10}
 \end{figure}
+
 
 \begin{description}
 \item[Podatkovni model meritvene naprave]\textbf{RHT10:}
@@ -489,8 +487,6 @@ Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{meri
 \end{itemize}
 \end{description}
 
-
-\clearpage
 
 \noindent Tretji podatkovni model smo za potrebe testiranja definirali kot simulirane meritve hladne verige. Zaradi ročno ustvarjenih podatkov smo ta tip naprave poimenovali kar 'Generated'.
 
@@ -622,6 +618,17 @@ Pred izvedbo smo definirali zahteve delovanja spletne aplikacije, ki smo jih raz
 \end{itemize}
 
 
+Različne vloge uporabnikov v spletni aplikaciji smo predstavili tudi z diagramom primera uporabe (slika~\ref{diagram-uporabe-userjev}).
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{slike/Use-case-userjev.png}
+\end{center}
+\caption{Diagram primera uporabe različnih vlog uporabnikov.}
+\label{diagram-uporabe-userjev}
+\end{figure}
+
+
 \subsection{Modela za izračun preostale dobe uporabnosti}
 \label{modela-za-izracun-sl}
 
@@ -639,6 +646,14 @@ V diplomski nalogi smo za izračun preostale dobe uporabnosti živila za primerj
 	Enačba za izračun preostale dobe uporabnosti po modelu CSIRO na osnovi izmerjene temperature $T$ v časovnem intervalu $t$ določi preostalo dobo uporabnosti $SL$ z upoštevanjem podane referenčne dobe uporabnosti $SL_{ref}$.
 	
 	\item[Model]\textbf{SAL:} Zasnovan je bil predvsem za morsko hrano. Uporablja tabelo (\ref{tab:tabela-sal}), ki ima za vsako temperaturo navedeno koliko časa je živilo uporabno, če je ves čas hranjeno na tej temperaturi \cite{magistrska-marolt}. 
+	
+	\begin{align}
+		k = t_{ref} / t_{SAL}				\nonumber \\
+       	SL = SL_{ref} - t \times k		\nonumber
+	\end{align}
+	
+	Za vrednostjo $t_{SAL}$, ki jo preberemo iz tabele~\ref{tab:tabela-sal}, izračunamo koeficient pokvarljivosti $k$. Preostala doba uporabnosti $SL$ je definirana tako, da od referenčne dobe uporabnosti $SL_{ref}$ odštejemo koeficient v časovnem itervalu $t$.
+
 
 \begin{table}[h]
 \begin{center}
@@ -660,7 +675,7 @@ T(°C) & SL(d) & T(°C) & SL(d) & T(°C) & SL(d) & T(°C) & SL(d) \\ \hline
 	
 \end{description}
 
-
+\clearpage
 
 \subsection{Nefunkcionalne zahteve}
 
@@ -701,8 +716,8 @@ Primer izvorne kode za izpis napak uporabniku:
 
 Grafični uporabniški vmesnik smo zasnovali tako, da je preprost in pregleden, ter prilagodljiv na vse vrste ekranov. Pri tem smo dali poudarek na vizualizacijske komponente, kot so grafi in tabele. Izbrali smo odprtokodno predlogo HTML {\tt CoolAdmin}~\cite{cooladmin-html-template}, ki je vsebovala že vnaprej definirane grafične komponente.
 
-Grafične komponente so sestavljene iz kode HTML, datoteke CSS, slik in knjižnic Javascript.
-Primer knjižnice Javascript, ki skrbi za izris interaktivnih grafov v aplikaciji, je {\tt highcharts.js}~\cite{hightchars-js}.
+Grafične komponente so sestavljene iz kode HTML, datoteke CSS, slik in knjižnic JavaScript.
+Primer knjižnice JavaScript, ki skrbi za izris interaktivnih grafov v aplikaciji, je {\tt highcharts.js}~\cite{hightchars-js}.
 
 
 
@@ -732,7 +747,7 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 		\item API\_token - žeton, ki je uporabljen pri avtentikaciji uporabnika
 	\end{itemize}	
 
-\item[Tabela ROLES] : Vsebuje seznam vlog uporabljene v aplikaciji.
+\item[Tabela ROLES] : Vsebuje seznam vlog, ki so uporabljene v aplikaciji.
 	\begin{itemize}
 		\item ID – enolična oznaka vloge
 		\item Name – ime vloge (administrator, editor, viewer)
@@ -812,7 +827,7 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 	\begin{itemize}
 		\item ID – enolični identifikator podatka
 		\item Temperature – temperatura hranjenja živila
-		\item SL – preostalo število dni uporabe živila
+		\item SL – preostala doba uporabe živila
 	\end{itemize}
 \end{description}
 
@@ -841,7 +856,7 @@ Neregistrirani uporabnik vnese podatke o imenu, e-pošti naslov in ponovitvi ges
 V primeru, da je uporabnik že registriran, na prijavni strani vnesene e-poštni naslov in geslo, klikne na gumb \sn{Login} in v primeru uspešne prijave ga aplikacija preusmeri na seznam meritev.
 
 
-V primeru uspešne registracije je uporabnik preusmerjen na opozorilo stran, kjer mu sporočimo, da je v postopku potrjevanja (slika~\ref{approval-wireframe}).
+V primeru uspešne registracije je uporabnik preusmerjen na opozorilno stran, kjer mu sporočimo, da je v postopku potrjevanja (slika~\ref{approval-wireframe}).
 Ob izvedeni administratorski potrditvi uporabnik prejme obvestilo na registracijski e-poštni naslov.
 
 \begin{figure}[h]
@@ -861,7 +876,7 @@ Ob izvedeni administratorski potrditvi uporabnik prejme obvestilo na registracij
 \label{import-data-wireframe}
 \end{figure}
 
-Pri uvozu datoteke v prvem koraku na gumb \sn{Choose File} izberemo željeno datoteko v ustreznem formatu. Dovoljena formata omogočata uvoz meritev v tekstovni datoteki ali datoteki CSV (vrednosti ločene z vejico). Takoj po izbiri sistem preveri datoteko in prikaže nadaljnje korake (slika~\ref{import-data-wireframe}).
+V prvem koraku z gumbom \sn{Choose File} izberemo željeno datoteko v ustreznem formatu. Dovoljena formata omogočata uvoz meritev v tekstovni datoteki ali datoteki CSV (vrednosti ločene z vejico). Takoj po izbiri sistem preveri datoteko in prikaže nadaljnje korake (slika~\ref{import-data-wireframe}).
 
 Sledi konfiguracija vhodnih podatkov, kjer aplikacija prikaže imena vseh stolpcev s primerom dveh vrstic podatkov, vsebovanih v datoteki. Predstavljene stolpce lahko poljubno spreminjamo s stolpci določenih v aplikaciji. Vrednosti, ki jih lahko izbiramo iz spustnega seznama so: datum, čas, temperatura, relativna vlaga, napetost baterije, rosišče ali \sn{--ignore--}. Z zadnjo vrednostjo povemo aplikaciji, da izbrani stolpec pri uvozu meritve izpusti.
 
@@ -991,7 +1006,7 @@ Slika~\ref{mvc-laravel} prikazuje tok MVC v ogrodju Laravel. Prične se z uporab
 
 \clearpage
 
-Dinamični deli aplikacije delujejo po principu spletne storitve REST. Za upravljanje in prikaz dinamičnih delov uporabniku so nam v pomoč različne knjižnice Javascript kot na primer bootstrap-table.js \cite{bootstraptable} za prikaz podatkov v tabeli in hightcharts.js \cite{hightchars-js} za prikaz podatkov v grafu.
+Dinamični deli aplikacije delujejo po principu spletne storitve REST. Za upravljanje in prikaz dinamičnih delov uporabniku so nam v pomoč različne knjižnice JavaScript kot na primer bootstrap-table.js \cite{bootstraptable} za prikaz podatkov v tabeli in hightcharts.js \cite{hightchars-js} za prikaz podatkov v grafu.
 
 
 
@@ -1057,21 +1072,21 @@ V tabeli~\ref{tabela-url} je seznam in opis vseh usmerjevalnikov aplikacije.
 /REGISTER & GET & Registracija v aplikacijo. \\
 /APPROVAL & GET & Opozorilna stran pred odobritvijo. \\
 /IMPORT & GET & Prikaz strani z uvozom meritve. \\
-/IMPORT/PARSE & POST & Preverba in razčlenitev meritve. \\ 
-/IMPORT/SAVE & POST & Shranitev meritve. \\  
+/IMPORT/PARSE & POST & Preverba in razčlenitev meritve. \\
+/IMPORT/SAVE & POST & Shranitev meritve. \\
 /IMPORT/GENERATE & POST & Shranitev generirane meritve. \\  
-/RECORDS & GET & Seznam meritev. \\ 
+/RECORDS & GET & Seznam meritev. \\
 /RECORD/$\mathrm{\{}$ID$\mathrm{\}}$ & GET & Ogled posamezne meritve. \\  
-/RECORD/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb meritve. \\  
-/RECORD/DELETE/$\mathrm{\{}$ID$\mathrm{\}}$ & DELETE & Izbris meritve. \\ 
-/SETTINGS & GET & Naslov za ogled živil, lokacij, naprav in uporabnikov. \\ 
+/RECORD/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb meritve. \\
+/RECORD/DELETE/$\mathrm{\{}$ID$\mathrm{\}}$ & DELETE & Izbris meritve. \\
+/SETTINGS & GET & Naslov za ogled živil, lokacij, naprav in uporabnikov. \\
 /SETTINGS/APPROVE/$\mathrm{\{}$USER\_ID$\mathrm{\}}$ & GET & Naslov za odobritev novega uporabnika. \\ 
 /PRODUCT/STORE & POST & Shranitev novega \v{z}ivila. \\ 
-/PRODUCT/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb živila. \\ 
+/PRODUCT/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb živila. \\
 /PRODUCT/DELETE/$\mathrm{\{}$ID$\mathrm{\}}$ & DELETE & Izbris živila. \\
-/LOCATION/STORE & POST & Shranitev nove lokacije. \\ 
-/LOCATION/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb lokacije. \\ 
-/LOCATION/DELETE/$\mathrm{\{}$ID$\mathrm{\}}$ & DELETE & Izbris lokacije. \\ 
+/LOCATION/STORE & POST & Shranitev nove lokacije. \\
+/LOCATION/EDIT/$\mathrm{\{}$ID$\mathrm{\}}$ & POST & Shranitev sprememb lokacije. \\
+/LOCATION/DELETE/$\mathrm{\{}$ID$\mathrm{\}}$ & DELETE & Izbris lokacije. \\
 
 	\end{tabularx}
 	}
@@ -1142,13 +1157,17 @@ Rezultat pogleda, kot ga vidi uporabnik, je prikazan na sliki~\ref{ss-approval}.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{slike/logout.png}
+\includegraphics[width=\textwidth]{slike/logout-obiskovalec.pdf}
 \end{center}
-\caption{Del zaslonskega posnetka prve avtorizirane strani.}
-\label{ss-logout}
+\caption{Zaslonski posnetek prve avtorizirane strani za administratorje in urednike (levo) ter obiskovalce (desno).}
+\label{ss-obiskovalec}
 \end{figure}
 
-Po prijavi odobrenega uporabnika se odpre prva avtorizirana stran, ki tako kot vse preostale, vsebuje navigacijsko vrstico, logotip, prikazno sliko, ki ponazarja vlogo uporabnika, in povezavo do odjave (slika~\ref{ss-logout}).
+Po prijavi odobrenega uporabnika se odpre prva avtorizirana stran, ki tako kot vse preostale, vsebuje navigacijsko vrstico, logotip, prikazno sliko, ki ponazarja vlogo uporabnika, in povezavo do odjave. (slika~\ref{ss-obiskovalec} levo).
+
+Uporabniki z vlogo obiskovalec vidijo drugačno navigacijsko vrstico, kot ostali uporabniki, saj imajo dostop omogočen samo do strni z meritvami (slika~\ref{ss-obiskovalec} desno). 
+
+
 
 \section{Uvoz in generiranje meritev}
 \label{uvoz-in-generiranje-meritev}
@@ -1156,7 +1175,7 @@ Po prijavi odobrenega uporabnika se odpre prva avtorizirana stran, ki tako kot v
 Ena iz med glavnih funkcionalnosti urednika je uvoz ali generiranje meritev. 
 Za uvoz meritve smo razvili posebno logiko prepoznave podatkov o meritvah v uvoženi datoteki. Na podlagi determinatorja, števila in imena stolpcev v fazi shranjevanja ponudimo uporabniku možnost konfiguracije meritvenih podatkov.
 
-\newpage
+\clearpage
 
 Primer privatne funkcije znotraj kontrolerja \verb=ImportController= za prepoznavo meritev tipa TIDA:
 
@@ -1304,16 +1323,16 @@ Funkciji za izračun preostale dobe uporabnosti živila po modelu CSIRO in SAL:
 // izracun za model CISRO
 public function getSl_CSIRO($sl, $interval, $temperature){
 
-    $t = floatval($interval) / 86400; // v casu t
+    $t = $interval / 86400; // v casu t
     $k = pow(1 + round($temperature) * 0.1, 2); // koeficient
     return ($sl - $t * $k); // preostala doba uporabnosti
 }
 // izracun za model SAL
 public function getSl_SAL($sl, $sl_ref, $interval, $temperature){
 
-    $t = floatval($interval) / 86400; // v casu t
+    $t = $interval / 86400; // v casu t
     $t_sal = $this->getT_SALfromTable( round($temperature) ); // doba uporabnosti pri temperaturi T prebrana iz tabele SAL
-    $k = intval($sl_ref / $t_sal); // koeficient iz referencne dobe uporabnosti deljeno z $t_sal
+    $k = $sl_ref / $t_sal; // koeficient iz referencne dobe uporabnosti deljeno z $t_sal
     return ($sl - $t * $k); // preostala doba uporabnosti
 }
 \end{lstlisting}
@@ -1328,7 +1347,7 @@ Za vsak zapis meritve kličemo zgornji funkciji s parametri preostale dobe upora
 \label{ss-record-page-sl}
 \end{figure}
 
-Na sliki~\ref{ss-record-page-sl} v zgornjem odseku zaslonskega posnetka vidimo, da se graf dobe uporabnosti nanaša na živilo svinina (\sn{Shelf Life (SL) for product Svinina}), ki ima priporočeno temperaturo hranjenja med 0 in 4 stopinje Celzija (\sn{Storage T (°C)}) in referenčno dobo uporabnosti 11 dni (\sn{SL-Reference (Days)}).
+Na sliki~\ref{ss-record-page-sl} v zgornjem odseku zaslonskega posnetka vidimo, da se graf dobe uporabnosti nanaša na živilo svinina (\sn{Shelf Life (SL) for product Svinina}), ki ima priporočeno temperaturo hranjenja med 0 in 4 °C (\sn{Storage T (°C)}) in referenčno dobo uporabnosti 11 dni (\sn{SL-Reference (Days)}).
 
 Iz spustnega seznama smo izbrali, da je pred meritvijo minil en dan od takrat, ko smo meso pričeli spremljati in beležiti meritve. V tem primeru to pomeni, da predpostavljamo, da je bila svinina hranjena v območju priporočenih temperatur (\sn{SL-Used (Days)}).
 
