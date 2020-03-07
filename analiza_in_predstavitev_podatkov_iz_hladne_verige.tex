@@ -369,7 +369,8 @@ V današnjem svetu igrajo podatki zelo pomembno vlogo v nadzoru hladne verige hi
 \bigskip
 
 %\noindent\textbf{Abstract:} 
-\noindent TODO english abstract from uvod.
+\noindent
+In today's world informations play a very important role in the control of the cold chain of perishable food products. They usually come from different sensor systems and in different data formats, often collected and stored in files. For such cases, we have developed a web application that allows easy entry, storage, analysis and visualization of the whole process covering the sensor measurements. It is possible to add and edit parameters related to measurements. Based on predefined requirements on the handling of food in the cold chain and the analysis of the measurements are calculated remaining shelf life, which is displayed in the time graph. The application also illustrates the anomalies in data. Thesis describes the process of creating a web application, which we developed with Laravel framework and MySQL database. Graphical user interface is customized for all types of devices, and for purpose of facilitating the testing, a data generator has been added, which allows additional analysis of simulated cold chain events. User management functionality is also included. At the end web application tested with real measurements of the cold chain.
 \bigskip
 
 \noindent\textbf{Keywords:} \tkeywordsEn.
@@ -383,15 +384,15 @@ V današnjem svetu igrajo podatki zelo pomembno vlogo v nadzoru hladne verige hi
 \pagestyle{fancy}
 
 \chapter{Uvod}
-Kakovostna in varna hrana predstavlja vse večji izziv tako na lokalnem, kot tudi globalnem trgu proizvodnje in distribucije. Potrošniki postajajo bolj osveščeni in pričakujejo vse več informacij o prehranski verigi živil, ki ne predstavlja tveganj za njihovo zdravje. Iz tega razloga so zelo pomembni podatki iz hladne verige, ki so pridobljeni v vseh fazah, od začetka priprave proizvoda za prodajo in vse do prodajnega mesta, kjer so na voljo končnim uporabnikom. Pri zagotavljanju hladne verige živil gre lahko marsikaj narobe, zato sistemi za zajem podatkov in aplikacije za analizo in vizualizacijo tovrstnih podatkov odigrajo ključno vlogo pri ugotavljanju in odpravljanju težav ali napak.
+Kakovostna in varna hrana predstavlja vse večji izziv tako na lokalnem, kot tudi globalnem trgu proizvodnje in distribucije. Potrošniki postajajo bolj osveščeni in pričakujejo vse več informacij o prehranski verigi živil, ki ne predstavlja tveganj za njihovo zdravje. Iz tega razloga so zelo pomembni podatki iz hladne verige, ki so pridobljeni v vseh fazah, od začetka priprave proizvoda za prodajo pa vse do prodajnega mesta, kjer so na voljo končnim uporabnikom. Pri zagotavljanju hladne verige živil gre lahko marsikaj narobe, zato sistemi za zajem podatkov in aplikacije za analizo in vizualizacijo tovrstnih podatkov odigrajo ključno vlogo pri ugotavljanju in odpravljanju težav ali napak.
 
-Podatki, ki zagotavljajo meritve v celotni hladni verigi, običajno prihajajo iz različnih senzorskih sistemov in v različnih podatkovnih formatih. Na področju analize in prikaza podatkov iz hladne verige obstaja že kar nekaj senzorskih sistemov, ki so sestavni del interneta stvari v prehranskih verigah. Še vedno pa se pogosto zbirajo in shranjujejo v datotekah, kjer so zapisani tudi v različnih podatkovnih formatih in  niso avtomatsko na voljo v spletnih aplikacijah. Njihovo analizo je nato mogoče izvesti z ročno obdelavo podatkov v ustreznih programskih orodjih, kar pa ne rešuje problema enostavnega in preglednega informiranja o morebitnih težavah, ki so pomembne za določanje preostale dobe uporabnosti hitro pokvarljivih živil. Zaradi izpostavljenosti višjim temperaturam je živilo še vedno primerno za uživanje, se je pa skrajšal čas v katerem ga je potrebno porabiti. 
+Podatki, ki zagotavljajo meritve v celotni hladni verigi, običajno prihajajo iz različnih senzorskih sistemov in v različnih podatkovnih formatih. Na področju analize in prikaza podatkov iz hladne verige obstaja že kar nekaj senzorskih sistemov, ki so sestavni del interneta stvari v prehranskih verigah. Še vedno pa se pogosto zbirajo in shranjujejo v datotekah, kjer so zapisani tudi v različnih podatkovnih formatih in  niso avtomatsko na voljo v spletnih aplikacijah. Njihovo analizo je nato mogoče izvesti z ročno obdelavo podatkov v ustreznih programskih orodjih, kar pa ne rešuje problema enostavnega in preglednega informiranja o morebitnih težavah, ki so pomembne za določanje preostale dobe uporabnosti hitro pokvarljivih živil. Zaradi izpostavljenosti višjim temperaturam je živilo še vedno primerno za uživanje, se je pa s tem skrajšal čas v katerem ga je potrebno porabiti. 
 
-V ta namen smo se odločili razviti enotno spletno aplikacijo, ki omogoča enostaven vnos in shranjevanje vhodnih podatkov, analizo in vizualizacijo celotnega postopka zajema senzorskih meritev. Na podlagi vnaprej definiranih zahtev o ravnanju z živili v hladni verigi in z analizo meritev in izbranih metod je možno določiti preostalo dobo uporabnosti. Aplikacija nazorno prikaže tudi anomalije v podatkih in tako opozori na morebitne napake ali pomanjkljivosti v procesu hladne verige ali delovanja senzorskega sistema.
+V ta namen smo se odločili razviti enotno spletno aplikacijo, ki omogoča enostaven vnos in shranjevanje vhodnih podatkov, analizo in vizualizacijo celotnega postopka zajema senzorskih meritev. Na podlagi vnaprej definiranih zahtev o ravnanju z živili v hladni verigi in z analizo meritev in izbranih metod je mogoče določiti preostalo dobo uporabnosti. Aplikacija nazorno prikaže tudi anomalije v podatkih in tako opozori na morebitne napake ali pomanjkljivosti v procesu hladne verige ali delovanja senzorskega sistema.
 
 Aplikacija je razvita s sodobnimi spletnimi orodji in tehnologijami, prilagojena za vse vrste naprav in enostavna za uporabo. Za potrebe lažjega testiranja smo razvili tudi generator podatkov, ki omogoča dodatne analize simuliranih dogodkov v hladni verigi. Poleg tega vsebuje tudi dodajanje in urejanje posameznih parametrov ter dodeljevanje in urejanje pravic uporabnikov.
 
-V diplomski nalogi najprej opišemo senzorske podatke s katerimi razpolagamo v aplikaciji. V drugem poglavju na kratko opišemo uporabljena orodja in tehnologije pri izdelavi spletne aplikacije. Sledi poglavje o predstavitvi funkcionalnih in nefunkcionalnih zahtev, podatkovnem modelu, načrtu arhitekture in opisu zaslonskih predlogov. V četrtem poglavju je podrobno predstavljen potek implementacije spletne rešitve z zaslonskimi slikami. Na koncu sledita še opis postopka testiranja in sklepne ugotovitve.
+V diplomski nalogi najprej opišemo senzorske podatke s katerimi razpolagamo v aplikaciji. V drugem poglavju na kratko opišemo uporabljena orodja in tehnologije pri izdelavi spletne aplikacije. Sledi poglavje o predstavitvi funkcionalnih in nefunkcionalnih zahtev, podatkovnem modelu, načrtu arhitekture in opisu zaslonskih predlogov. V četrtem poglavju je podrobno predstavljen potek razvoja spletne rešitve z zaslonskimi slikami. Na koncu sledita še opis postopka testiranja in sklepne ugotovitve.
 
 
 
@@ -402,7 +403,7 @@ V poglavju na kratko predstavimo hladno verigo, obstoječe spletne rešitve in o
 
 \section{Hladna veriga}
 
-Zahteve potrošnikov po raznoliki in kvalitetni hrani se iz leta v leto povečujejo, s tem pa se povečujejo tudi zahteve po prevozu in shranjevanju ohlajenih in zmrzjenih živil. Živila lahko potujejo preko celega planeta, preden pridejo do končnega uporabnika. Čez celoten logističen proces je potrebno zagotavljati nizke temperaturne pogoje, ki ohranjajo varnost in boljšo kakovost živila. Temu procesu rečemo hladna veriga.
+Zahteve potrošnikov po raznoliki in kvalitetni hrani se iz leta v leto povečujejo, s tem pa se povečujejo tudi zahteve po prevozu in shranjevanju ohlajenih in zmrzjenih živil. Živila lahko potujejo preko celega planeta, preden pridejo do končnega uporabnika. Čez celoten logističen proces je potrebno zagotavljati nizke temperaturne pogoje, ki ohranjajo varnost in boljšo kakovost živila. Ta proces se imenuje hladna veriga.
 Hladna veriga torej pomeni vzdrževanje priporočene temperature, da zagotovimo rok trajanja živila \cite{hladna-veriga}.
 
 Pri upravljanju tega procesa gre lahko marsikaj narobe, zlasti pri
@@ -413,11 +414,11 @@ vzdrže-\\vanju priporočene temperature in tudi vlage v posamezni fazah od proi
 
 Za zagotavljanje hladne verige odigrajo ključno vlogo sistemi za zajem podatkov in aplikacije za analizo in vizualizacijo tovrstnih podatkov. 
 Na trgu obstajajo različne rešitve, ki so povezane z določenimi sistemi za zajem in obdelavo senzorskih podatkov. Nismo pa zasledili primera, ki bi omogočal uporabo meritev, ki so bili pridobljeni v različnih vhodnih podatkovnih formatih. 
-Spodaj sta na kratko opisana dva primera.
+Spodaj so na kratko opisani trije primeri.
 
 
 \subparagraph{\textbf{Spletna aplikacija Coldchainview:}} 
-Optimizirana je za delo z moduli Euroscan. Omogoča sprotno spremljanje in upravljanje izdelkov različnih panog znotraj hladne verige. Podprte so še naslednje funkcionalnosti: grafični prikaz podatkov, izvoz podatkov v format PDF in XLS, pošiljanje samodejnih alarmov preko e-pošte in SMS-ja, pregled in analiza posameznih senzorskih lokacij ter konfiguracija hladilnih enot.
+Optimizirana je za delo z moduli Euroscan. Omogoča sprotno spremljanje in upravljanje izdelkov različnih panog znotraj hladne verige. Podprte so še naslednje funkcionalnosti: grafični prikaz podatkov, izvoz podatkov v format PDF in XLS, pošiljanje samodejnih alarmov preko e-pošte in SMS-ov, pregled in analiza posameznih senzorskih lokacij ter konfiguracija hladilnih enot.
 Spletna aplikacija je last podjetja ORBCOMM®\footnote
 {https://www.orbcomm.com/eu/solutions/web-applications/coldchainview}. Njena uporaba je plačljiva, zato aplikacije nismo preizkusili, ampak smo se sklicevali na proizvajalčev opis produkta \cite{coldchainview}.
 
@@ -426,8 +427,7 @@ Slovenska komercialna rešitev podjetja RSLabs d.o.o., ki ima omogočen postopek
 
 
 \subparagraph{\textbf{Spletna aplikacija v okviru magistrskega dela Senzorski moduli NFC in varnost podatkov:}}  
-Omogoča analizo in pregled senzorskih podatkov tipa TIDA na način kjer se meritve pošiljajo na strežnik sproti ali na zahtevo. Sistem podpira še zaznavanje nepričakovanih dogodkov, obveščanje, izvoz podatkov in konfiguracijo senzorskega sistema NFC (Near Field Communica-
-tion). Spletna aplikacija je bila razvita kot del magistrskega dela, ki prikaže uporabo celotnega sistema za potrebe hladne verige \cite{magistrska-crnigoj}.
+Omogoča analizo in pregled senzorskih podatkov tipa TIDA na način, kjer se meritve pošiljajo na strežnik sproti ali na zahtevo. Sistem podpira še zaznavanje nepričakovanih dogodkov, obveščanje, izvoz podatkov in konfiguracijo senzorskega sistema NFC (Near Field Communication). Spletna aplikacija je bila razvita kot del magistrskega dela, ki prikaže uporabo celotnega sistema za potrebe hladne verige \cite{magistrska-crnigoj}.
 
 
 \section{Senzorski podatki}
@@ -448,7 +448,7 @@ Merilna naprava TIDA-00524 je senzorski modul NFC z zelo nizko porabo energije p
 
 
 \begin{description}
-\item[Podatkovni model meritvene naprave TIDA-00524.] Podatkovni model temelji iz podatkov izvoženih iz spletne aplikacija v okviru magistrskega dela Senzorski moduli NFC in varnost podatkov \cite{magistrska-crnigoj}:
+\item[Podatkovni model meritvene naprave TIDA-00524.] Podatkovni model temelji na podatkih, izvoženih iz spletne aplikacije v okviru magistrskega dela Senzorski moduli NFC in varnost podatkov \cite{magistrska-crnigoj}:
 
 \begin{itemize}
 \item  zapis datoteke v formatu CSV (.csv),
@@ -494,10 +494,10 @@ Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{meri
 \begin{description}
 \item[Glavne lastnosti podatkovnega modela]\textbf{Generated:}
 \begin{itemize}
-\item podatke se generira direktno v spletni aplikaciji,
+\item podatki so ustvarjeni direktno v spletni aplikaciji,
 \item določi se začetni datum in čas meritve,
 \item določi se časovni interval v sekundah,
-\item poljubno se dodaja število zapisov z isto temperaturo (°C), \\ relativno vlago (\%) in lokacijo, kjer želimo simulirati meritev.
+\item poljubno se dodaja število zapisov z enako temperaturo (°C), \\ relativno vlago (\%) in lokacijo, kjer želimo simulirati meritev.
 \end{itemize}
 \end{description}
 
@@ -508,7 +508,7 @@ Ima možnost več intervalnih vrednosti - od 2 sekundi do 24 ur (slika~\ref{meri
 
 \section{Podatkovna baza}
 
-Na področju informacijskih sistemov je osnovni vir informacij podatkovna baza, ki vsebuje zbirko shem, tabel, poizvedb, poročil, pogledov in drugih objektov. Upravljamo jo preko sistema za upravljanje baz podatkov. V grobem ločimo relacijske od nerelacijskih. Prve so najbolj razširjene in temeljijo na množici relacij, kjer je vsaka relacija tabela z vrsticami in stolpci. Nerelacijske opredeljuje visoka fleksibilnost, katero dosežejo tako, da nimajo v naprej definirane sheme.
+Na področju informacijskih sistemov je osnovni vir informacij podatkovna baza, ki vsebuje zbirko shem, tabel, poizvedb, poročil, pogledov in drugih objektov. Upravljamo jo preko sistema za upravljanje baz podatkov. V grobem ločimo relacijske od nerelacijskih. Prve so najbolj razširjene in temeljijo na množici relacij, kjer je vsaka relacija tabela z vrsticami in stolpci. Nerelacijske opredeljuje visoka prilagodljivost, ki je dosežena tako, da sheme niso definirane v naprej.
 Primeri sistemov za upravljanje relacijskih baz podatkov so MySQL, Oracle, PostgreSQL, nerelacijskih pa MongoDB, Redis, Elasticsearch \cite{podatkovne-baze}.
 
 V diplomski nalogi smo uporabili relacijsko podatkovno bazo s sistemom za upravljanje MySQL \cite{mysql-baza}. Do podatkov smo dostopali preko spletnega vmesnika \verb=phpMyAdmin= \cite{phpmyadmin-framework}.
@@ -516,15 +516,15 @@ V diplomski nalogi smo uporabili relacijsko podatkovno bazo s sistemom za upravl
 \section{Spletni strežnik}
 
 Spletni strežnik je sistem, ki obdeluje zahteve preko protokola HTTP.
-Njegove osnovne naloge so shranjevanje, obdelava in pošiljanje spletnih strani odjemalcem. Tipični primeri spletnih strežnikov so Apache, Nginx, Microsoft IIS. Vsak iz med njih podpira določene skriptne jezike kot so PHP, ASP, JavaScript \cite{spletni-strezniki}.
+Njegove osnovne naloge so shranjevanje, obdelava in pošiljanje spletnih strani odjemalcem. Tipični primeri spletnih strežnikov so Apache, Nginx in Microsoft IIS. Vsak iz med njih podpira določene programske jezike kot so PHP, ASP, JavaScript \cite{spletni-strezniki}.
 
-V diplomski nalogi smo za razvoj spletne aplikacije izbrali skriptni jezik PHP, ki ima od verzije 5.4.0 vgrajen spletni strežnik za lokalni razvoj, katerega na zahtevo zaženemo preko ukazne vrstice z ukazom \verb=php artisan serve=.
+V diplomski nalogi smo za razvoj spletne aplikacije uporabili programski jezik PHP, ki ima od verzije 5.4 naprej vgrajen spletni strežnik za lokalni razvoj, ki ga lahko na zahtevo zaženemo preko ukazne vrstice z ukazom \verb=php artisan serve=.
 
 \section{Spletna aplikacija}
 
-Skupek dinamičnih spletnih strani, ki omogočajo izvajanje akcij in opravil katerih spremembe se odražajo nad podatki, imenujemo spletna aplikacija. Glavne lastnosti le-te so neodvisnost od operacijskega sistema, dostopnost, centraliziran nazor in varnost. Zaradi omenjenih lastnosti je potreba po hitrem razvoju spletnih aplikacij vse večja. V ta namen razvijalci uporabljajo ogrodja, ki imajo temeljne gradnike že vnaprej definirane.
+Skupek dinamičnih spletnih strani, ki omogočajo izvajanje akcij in opravil katerih spremembe se odražajo nad podatki, imenujemo spletna aplikacija. Njene glavne lastnosti so neodvisnost od operacijskega sistema, dostopnost, centraliziran nazor in varnost. Zaradi omenjenih lastnosti je potreba po hitrem razvoju spletnih aplikacij vse večja. V ta namen razvijalci uporabljajo ogrodja, ki imajo temeljne gradnike podane že v naprej.
 
-Ogrodje Laravel je v zadnjih letih popularno pri razvijalcih v programskem jeziku PHP. Njegov začetek beležimo junija 2011 z prvo verzijo, danes pa je aktualna že šesta, ki sledi zadnjim standardom na področju spletnega razvoja \cite{laravel-main-page}. 
+Ogrodje Laravel je v zadnjih letih popularno pri razvijalcih v programskem jeziku PHP. Predstavljeno je bilo junija 2011, ko je bila izdana prva verzija, danes pa je na voljo že šesta, ki sledi najnovejšim standardom na področju spletnega razvoja \cite{laravel-main-page}. 
 
 \begin{description}
 	
@@ -532,7 +532,7 @@ Ogrodje Laravel je v zadnjih letih popularno pri razvijalcih v programskem jezik
 	
 	\begin{itemize}
 		\item arhitektura MVC,
-		\item vse potrebno za delo z avtentikacijo uporabnika,
+		\item vse potrebno za avtentikacijo uporabnika,
 		\item konfigurirana obravnava napak in izjem,
 		\item odpravljanje najpogostejših tehničnih ranljivosti,
 		\item podpora za integracijo predpomnilniških sistemov,
@@ -542,16 +542,16 @@ Ogrodje Laravel je v zadnjih letih popularno pri razvijalcih v programskem jezik
 	\end{itemize}
 \end{description}
 
-Za hitrejši razvoj spletnih aplikacij v primerih, ko potrebujemo napredne grafične komponente, razvijalci dodatno izbirajo po predlogah HTML. Predloga HTML običajno vsebuje grafične komponente kot so gumbi, opozorilne kompomente, tipografski elementi, spletni obrazci, grafi in tabele.
+Za hitrejši razvoj spletnih aplikacij v primerih, ko potrebujemo napredne grafične komponente, razvijalci dodatno uporabljajo predloge HTML. Predloga HTML običajno vsebuje grafične komponente, kot so gumbi, opozorilne kompomente, tipografski elementi, spletni obrazci, grafi in tabele.
 
 Dinamična komunikacija med ogrodjem in grafičnimi komponentami v spletni aplikaciji običajno poteka v obliki spletne storitve REST. Njen namen je definiranje principov, ki opisujejo na kakšen način so viri definirani in naslovljeni, pri katerem se uporabljajo metode protokola HTTP. Te metode so lahko GET, POST, PUT ali DELETE, vsak vir podatkov pa ima svoj URL \cite{protokol-rest}.
 
 
 \section{Programska oprema}
 
-Pri razvoju spletne aplikacije smo uporabili programsko orodje Intellij IDEA podjetja jetBrains. Produkt je na voljo v plačljivi in zastonjski verziji, namenjen razvijalcem v programskem jeziku Java, med drugim pa nudi podporo tudi za programski jezik PHP. Omogoča tudi integracijo s sistemi za nadzor verzij programske kode, v našem primeru s sistemom Git \cite{intellij-idea}.
+Pri razvoju spletne aplikacije smo uporabili programsko orodje Intellij IDEA podjetja jetBrains. Produkt je na voljo v plačljivi in brezplačni verziji, namenjen je razvijalcem v programskem jeziku Java, med drugim pa nudi podporo tudi za programski jezik PHP. Omogoča tudi integracijo s sistemi za nadzor verzij programske kode, v našem primeru s sistemom Git \cite{intellij-idea}.
 
-Git je sistem za upravljanje z izvorno kodo, s katerim lahko nadzorujemo spremembe, omogoča sodelovanje več razvijalcev na istem projektu, obenem pa nam kadarkoli zagotavlja obnovitev kode na prejšnjo - zgodnejše stanje \cite{sistem-git}.
+Git je sistem za upravljanje z izvorno kodo, s katerim lahko nadzorujemo spremembe, omogoča sodelovanje več razvijalcev na istem projektu, obenem pa nam kadarkoli zagotavlja obnovitev kode na prejšnje oz. zgodnejše stanje \cite{sistem-git}.
 
 Za beleženje in vodenje nalog v okviru diplomske naloge smo uporabili spletni servis GitHub. V osnovi omenjeni servis ponuja repozitorije Git v oblaku, omogoča pa tudi distribuirano upravljanje z izvorno kodo, kontrolo dostopa in storitve za razvoj v skupini preko spletnega grafičnega vmesnika \cite{github}.
 
@@ -598,7 +598,7 @@ Pred izvedbo smo definirali zahteve delovanja spletne aplikacije, ki smo jih raz
 	\begin{itemize}
 		\item celoten seznam, možnost iskanja in filtriranja vseh uvoženih ali generiranih meritev,
 		
-		\item vidi podroben prikaz in analizo podatkov o meritvi,
+		\item na voljo podroben prikaz in analizo podatkov o meritvi,
 		
 		\item na podlagi temperature sistem napove preostalo dobo uporabnosti živila.
 	\end{itemize}
@@ -611,7 +611,7 @@ Pred izvedbo smo definirali zahteve delovanja spletne aplikacije, ki smo jih raz
 
 \item Potrjeni uporabnik prejme obvestilo na registracijsko e-pošto.
 
-\item Sistem naj prikaže čas trajanja meritve po lokacijah, izračuna največje in najmanjše vrednosti in obvesti o preseženih proporočenih vrednostih v posamezni meritvi.
+\item Sistem naj prikaže čas trajanja meritve po lokacijah, izračuna največje in najmanjše vrednosti in obvesti o preseženih priporočenih vrednostih v posamezni meritvi.
 
 \item Za potrebe simuliranja meritev in lažjega testiranja aplikacije naj bo dodan generator podatkov.
 
@@ -629,6 +629,8 @@ Različne vloge uporabnikov v spletni aplikaciji smo predstavili tudi z diagramo
 \end{figure}
 
 
+\clearpage
+
 \subsection{Modela za izračun preostale dobe uporabnosti}
 \label{modela-za-izracun-sl}
 
@@ -645,7 +647,7 @@ V diplomski nalogi smo za izračun preostale dobe uporabnosti živila za primerj
 	
 	Enačba za izračun preostale dobe uporabnosti po modelu CSIRO na osnovi izmerjene temperature $T$ v časovnem intervalu $t$ določi preostalo dobo uporabnosti $SL$ z upoštevanjem podane referenčne dobe uporabnosti $SL_{ref}$.
 	
-	\item[Model]\textbf{SAL:} Zasnovan je bil predvsem za morsko hrano. Uporablja tabelo (\ref{tab:tabela-sal}), ki ima za vsako temperaturo navedeno koliko časa je živilo uporabno, če je ves čas hranjeno na tej temperaturi \cite{magistrska-marolt}. 
+	\item[Model]\textbf{SAL:} Zasnovan je bil predvsem za morsko hrano. Uporablja tabelo (\ref{tab:tabela-sal}), ki ima za vsako temperaturo navedeno, koliko časa je živilo uporabno, če je ves čas hranjeno na tej temperaturi \cite{magistrska-marolt}. 
 	
 	\begin{align}
 		k = t_{ref} / t_{SAL}				\nonumber \\
@@ -685,9 +687,9 @@ Zaradi zagotavljanja ustrezne varnosti smo poskrbeli za izvedbo identifikacije, 
 
 Identifikacija je v našem primeru e-pošta uporabnika, z ustreznim geslom pa preverimo avtentikacijo oziroma prisotnost uporabnika. Zaradi lažje uporabnosti se nadaljnje preverjanje prisotnosti preverja na podlagi seje, ki ima aktivnost nastavljeno na 2 minute. 
 
-Na nivoju avtorizacije imamo poskrbljeno dva nivoja uporabnikov – urednik in administrator. Privzeto se ob registraciji dodeli vloga neodobrenega urednika, ki še nima dostopa do vsebin, dokler administratorska vloga ne potrdi omenjeno vlogo.
+Na nivoju avtorizacije imamo poskrbljeno za tri nivoje uporabnikov – administrator, urednik in obiskovalec. Privzeto se ob registraciji dodeli vloga neodobrenega obiskovalca, ki še nima dostopa do vsebin, dokler administratorska vloga ne potrdi omenjeno vlogo.
 
-Za zadnji sklop varnosti beležimo še dnevnik prijav uporabnikov. Pri tem nam je v pomoč programsko ogrodje Laravel s knjižnico Monolog~\cite{laravel-monolog}, kjer z enostavnim ukazom shranimo vsako prijavo uporabnika v log datoteko na direktorij strežnika aplikacije. \\
+Za zadnji sklop varnosti beležimo še dnevnik prijav uporabnikov. Pri tem nam je v pomoč programsko ogrodje Laravel s knjižnico Monolog~\cite{laravel-monolog}, kjer z enostavnim ukazom shranimo vsako prijavo uporabnika v log datoteko, ki se shrani v mapo na aplikacijskem strežniku. \\
 
 \noindent \textbf{Obravnava napak}
 
@@ -714,7 +716,7 @@ Primer izvorne kode za izpis napak uporabniku:
 
 \noindent \textbf{Prilagodljiva grafična podoba}
 
-Grafični uporabniški vmesnik smo zasnovali tako, da je preprost in pregleden, ter prilagodljiv na vse vrste ekranov. Pri tem smo dali poudarek na vizualizacijske komponente, kot so grafi in tabele. Izbrali smo odprtokodno predlogo HTML {\tt CoolAdmin}~\cite{cooladmin-html-template}, ki je vsebovala že vnaprej definirane grafične komponente.
+Grafični uporabniški vmesnik smo zasnovali tako, da je preprost in pregleden ter prilagodljiv na vse vrste ekranov. Pri tem smo poudarili vizualne komponente, kot so grafi in tabele. Izbrali smo odprtokodno predlogo HTML {\tt CoolAdmin}~\cite{cooladmin-html-template}, ki vsebuje že vnaprej definirane grafične komponente.
 
 Grafične komponente so sestavljene iz kode HTML, datoteke CSS, slik in knjižnic JavaScript.
 Primer knjižnice JavaScript, ki skrbi za izris interaktivnih grafov v aplikaciji, je {\tt highcharts.js}~\cite{hightchars-js}.
@@ -762,7 +764,7 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 
 \item[Tabela DEVICES] : Vsebuje seznam naprav, ki so vsebovane v meritvi.
 	\begin{itemize}
-		\item UD – enolična oznaka naprave
+		\item ID – enolična oznaka naprave
 		\item Name – ime naprave
 	\end{itemize}
 
@@ -797,7 +799,7 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 		\item Product\_ID – enolična oznaka živila
 		\item Timestamps – avtomatsko generirana časovna polja (created\_at, updated\_at), ki predstavlja čas uvoza in čas zadnje spremembe meritve
 		\item Samples – število zapisov v eni meritvi
-		\item Intervals – časovni interval med posameznimi zapisi meritve (enota milisekunda)
+		\item Intervals – časovni interval med posameznimi zapisi meritve (enota sekunda)
 		\item Limits – polje, ki vsebuje izračunane podatke o robnih številkah meritve
 		\item Alarms – polje za opozorila ugotovljena iz meritve
 		\item Title – ime posamezne meritve
@@ -812,7 +814,7 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 		\item Records\_ID – enolična oznaka meritve
 		\item Timestamp – točen čas zapisa
 		\item Temperature – izmerjena temperatura v °C
-		\item Humidity – izmerjena relativna vlaga v procentih
+		\item Humidity – izmerjena relativna vlaga v \%
 		\item Dew\_points – izmerjeno rosišče
 		\item Battery\_voltage – napetost baterije merilne naprave
 	\end{itemize}
@@ -835,11 +837,11 @@ Načrtovanje podatkovnega modela nam je olajšalo kasnejše kreiranje objektov. 
 
 \subsection{Spletna aplikacija}
 
-Spletna aplikacija je namenjena uporabnikom, ki so odgovorni za kakovost in varnost hitro pokvarljivih živil. Omogoča uvoz, konfiguracijo, pregled, iskanje in filtriranje meritev v procesu hladne verige. V posamezni meritvi se analizira in vizualizira merljive podatke, izračuna največje in najmanjše vrednosti, prikaže skupni čas trajanja meritve po lokacijah, obvesti o preseženih priporočenih vrednostih. Za vse izmerjene temperature v določenem časovnem obdobju aplikacija napove tudi preostalo dobo uporabnosti živila po modelih CSIRO in SAL \cite{magistrska-marolt}.
+Spletna aplikacija je namenjena uporabnikom, ki so odgovorni za kakovost in varnost hitro pokvarljivih živil. Omogoča uvoz, konfiguracijo, pregled, iskanje in filtriranje meritev v procesu hladne verige. V posamezni meritvi se analizira in vizualizira merljive podatke, izračuna največje in najmanjše vrednosti, prikaže skupni čas trajanja meritve po lokacijah ter obvesti o preseženih priporočenih vrednostih. Za vse izmerjene temperature v določenem časovnem obdobju aplikacija napove tudi preostalo dobo uporabnosti živila po modelih CSIRO in SAL \cite{magistrska-marolt}.
 
 V fazi načrtovanja smo naredili prototip aplikacije oziroma zaslonske predloge glavnih funkcionalnosti. Vsaka stran vsebuje na levi strani njihov seznam, kjer so povezave do naslednjih strani. 
 
-Aplikacija vsebuje še prikazno sliko vloge in osnovne informacije uporabnika, logotip ter sekundarno navigacijo, ki ponazarja, kje se nahajamo na strani. Omenjene funkcionalnosti so bile izpuščene iz prototipa, saj niso igrale pomembne vloge.
+Aplikacija vsebuje še prikazno sliko uporabniške vloge in osnovne informacije uporabnika, logotip ter sekundarno navigacijo, ki ponazarja, kje se nahajamo na strani. Omenjene funkcionalnosti so bile izpuščene iz prototipa, saj niso igrale pomembne vloge.
 
 \begin{figure}[h]
 \begin{center}
@@ -849,15 +851,15 @@ Aplikacija vsebuje še prikazno sliko vloge in osnovne informacije uporabnika, l
 \label{registration-login-wireframe}
 \end{figure}
 
-Na vstopni strani se prikaže obrazec za prijavo, kot prikazuje slika~\ref{registration-login-wireframe}. Uporabnik mora ob prvem obisku navigirati na stran z registracijo s klikom na povezavo \sn{Registration}.
+Na vstopni strani se prikaže obrazec za prijavo, kot prikazuje slika~\ref{registration-login-wireframe}. Uporabnik mora ob prvem obisku navigirati na stran za registracijo s klikom na povezavo \sn{Registration}.
 
-Neregistrirani uporabnik vnese podatke o imenu, e-pošti naslov in ponovitvi gesla ter klikne na gumb \sn{Register}.
+Neregistrirani uporabnik vnese podatke o imenu, e-poštnem naslovu in geslu ter klikne na gumb \sn{Register}.
 
-V primeru, da je uporabnik že registriran, na prijavni strani vnesene e-poštni naslov in geslo, klikne na gumb \sn{Login} in v primeru uspešne prijave ga aplikacija preusmeri na seznam meritev.
+V primeru, da je uporabnik že registriran, na prijavni strani vnesene e-poštni naslov in geslo ter klikne na gumb \sn{Login}. V primeru uspešne prijave ga aplikacija preusmeri na seznam meritev.
 
 
 V primeru uspešne registracije je uporabnik preusmerjen na opozorilno stran, kjer mu sporočimo, da je v postopku potrjevanja (slika~\ref{approval-wireframe}).
-Ob izvedeni administratorski potrditvi uporabnik prejme obvestilo na registracijski e-poštni naslov.
+Ob izvedeni administratorski potrditvi, uporabnik prejme obvestilo na registracijski e-poštni naslov.
 
 \begin{figure}[h]
 \begin{center}
@@ -876,15 +878,15 @@ Ob izvedeni administratorski potrditvi uporabnik prejme obvestilo na registracij
 \label{import-data-wireframe}
 \end{figure}
 
-V prvem koraku z gumbom \sn{Choose File} izberemo željeno datoteko v ustreznem formatu. Dovoljena formata omogočata uvoz meritev v tekstovni datoteki ali datoteki CSV (vrednosti ločene z vejico). Takoj po izbiri sistem preveri datoteko in prikaže nadaljnje korake (slika~\ref{import-data-wireframe}).
+Po uspešni prijavi smiselno nadaljujemo na stran z uvozom meritve (slika~\ref{import-data-wireframe}). V prvem koraku z gumbom \sn{Choose File} izberemo željeno datoteko v ustreznem formatu. Dovoljena formata omogočata uvoz meritev v tekstovni datoteki ali datoteki CSV (vrednosti ločene z vejico). Takoj po izbiri sistem preveri datoteko in prikaže nadaljnje korake.
 
 Sledi konfiguracija vhodnih podatkov, kjer aplikacija prikaže imena vseh stolpcev s primerom dveh vrstic podatkov, vsebovanih v datoteki. Predstavljene stolpce lahko poljubno spreminjamo s stolpci določenih v aplikaciji. Vrednosti, ki jih lahko izbiramo iz spustnega seznama so: datum, čas, temperatura, relativna vlaga, napetost baterije, rosišče ali \sn{--ignore--}. Z zadnjo vrednostjo povemo aplikaciji, da izbrani stolpec pri uvozu meritve izpusti.
 
 \noindent V zadnjem koraku izpolnimo še preostale podatke o meritvi, kot so: 
 \begin{itemize}
-	\item izbira živila, ki je bilo povezano z meritvami hladne verige. Iz izpustnega seznama \sn{Product} lahko izbiramo živila, ki smo jih predhodno vnesli v aplikaciji. Predstavili smo: izbiro z Ribe – tuna, Ribe – brancin, Svinina, Govedina - mleto meso, Govedina, Piščanec – file,
+	\item izbira živila, ki je bilo povezano z meritvami hladne verige. Iz spustnega seznama \sn{Product} lahko izbiramo živila, ki smo jih predhodno vnesli v aplikaciji: Ribe – tuna, Ribe – brancin, Svinina, Govedina - mleto meso, Govedina, Piščanec – file,
 	
-	\item izbira lokacije, kjer je bila opravljena meritev. Iz izpustnega seznama \sn{Location} lahko izbiramo lokacije, ki smo jih predhodno vnesli v aplikaciji,
+	\item izbira lokacije, kjer je bila opravljena meritev. Iz spustnega seznama \sn{Location} lahko izbiramo lokacije, ki smo jih predhodno vnesli v aplikaciji,
 	
 	\item ime meritve v vnosnem polju \sn{Title},
 	
@@ -895,7 +897,7 @@ Informativno se izpišejo tudi podatki o številu zapisov (\sn{No. Samples}), za
 
 S klikom na gumb \sn{Reset} se lahko ponovno nastavi uvožene podatke.
 
-Čisto na koncu s klikom na \sn{Import data} shranimo uvožene podatke v bazo. Po uspešni shranitvi se nam prikaže obvestilo s povezavo do ogleda meritve. V primeru, da pri shranjevanju pride do napake, se uporabniku izpiše opozorilo z opisom težave v rdeči barvi.
+Čisto na koncu s klikom na \sn{Import data} shranimo uvožene podatke v bazo. Po uspešni shranitvi se prikaže obvestilo s povezavo do ogleda meritve. V primeru, da pri shranjevanju pride do napake, se uporabniku izpiše opozorilo z opisom težave v rdeči barvi.
 
 \begin{figure}[h]
 \begin{center}
@@ -905,14 +907,14 @@ S klikom na gumb \sn{Reset} se lahko ponovno nastavi uvožene podatke.
 \label{generate-data-wireframe}
 \end{figure}
 
-Pri kliku na zavihek \sn{Generate data} se prikaže spletno okno iz slike~\ref{generate-data-wireframe}. Omogoča ročno generiranje meritev, tako da na začetku vnesemo ime in komentar meritve, iz izpustnega seznama izberemo živilo (\sn{Product}) in nastavimo začetni čas (\sn{Start timestamp}) in interval med zapisi v sekundah (\sn{Interval}).
+Pri kliku na zavihek \sn{Generate data} se prikaže spletno okno, ki ga prikazuje slika~\ref{generate-data-wireframe}. Omogoča ročno generiranje meritev, tako da na začetku vnesemo ime in komentar meritve, iz spustnega seznama izberemo živilo (\sn{Product}), nastavimo začetni čas (\sn{Start timestamp}) in interval med zapisi v sekundah (\sn{Interval}).
 
-Na naslednjem razdelku vnesemo število in vrednosti posameznih zapisov. V polju \sn{Records} vnesemo število zapisov, v polju \sn{Temperature} temperaturo v ºC, v polju \sn{Humidity} relativno vlago v \% in iz izpustnega seznama \sn{Location} lokacijo.
+Na naslednjem razdelku vnesemo število in vrednosti posameznih intervalov. V polju \sn{Records} vnesemo število zapisov, v polju \sn{Temperature} temperaturo v ºC, v polju \sn{Humidity} relativno vlago v \% in iz spustnega seznama \sn{Location} lokacijo.
 
 S klikom na zeleno ikono \sn{plus} poljubno dodajamo nove intervalne vrednosti zapisov. 
 S klikom na sivo ikono \sn{X} pa poljubno odstranjujemo intervalne vrednosti zapisov.
 
-Po vnosu podatkov zaključimo s klikom na gumb \sn{Generate data} ali \sn{Reset}. V prvem primeru se po uspešno generirani meritvi prikaže obvestilo s povezavo do ogleda meritve, v drugem pa se vsi podatki brišejo.
+Po vnosu podatkov zaključimo s klikom na gumb \sn{Generate data} ali \sn{Reset}. V prvem primeru se po uspešno generirani meritvi prikaže obvestilo s povezavo do ogleda meritve, v drugem pa se vsi podatki ponastavijo.
 
 
 
@@ -932,7 +934,7 @@ Na spletnem oknu za prikaz seznama meritev (slika~\ref{records-wireframe}) iz ra
 	\item spustni seznam \sn{Location} po imenu lokacije.  
 \end{itemize}
 
-S klikom na gumb \sn{Reset} pobrišemo trenutne iskalne kriterije.
+S klikom na gumb \sn{Reset} ponastavimo trenutne iskalne kriterije.
 
 
 Pod razdelkom s filtri se v tabelaričnem seznamu prikazujejo filtrirane meritve z nekaj osnovnimi informacijami in možnostjo ogleda podrobnosti (gumb \sn{Details}) ali brisanjem (gumb \sn{Delete}).
@@ -955,7 +957,7 @@ Na sliki~\ref{record-wireframe} je prikazano, da imamo v skrajnem desnem robu s 
 Poleg že omenjenih osnovnih informacij meritve se nam v razdelku ugotovitve in opozorila (\sn{Findings and Alerts}) izpišejo morebitna opozorila, celoten čas izven priporočenih temperatur in skupni čas po lokacijah.
 
 Vse meritve se poleg tabelaričnega izpisa prikažejo tudi v grafični obliki.
-Graf po Y osi prikazuje temperaturo (levo) in relativno vlago (desno), po X osi pa celotni čas meritve. Črti na grafu določata temperaturo (modra črta) in relativno vlago (črna črta) v odvisnosti od časa.
+Graf na osi Y prikazuje temperaturo (levo) in relativno vlago (desno), na osi X pa celotni čas meritve. Črti na grafu določata temperaturo (modra črta) in relativno vlago (črna črta) v odvisnosti od časa.
 
 Ob kliku na ikono znotraj grafa v skrajnem desnem robu imamo možnost pogleda čez celoten ekran, izvoz v različne formate ali tiskanje grafa.
 
@@ -971,7 +973,7 @@ Graf pri dobi uporabnosti je podoben prvemu, le da vsebuje še dve linearni črt
 \begin{center}
 \includegraphics[width=0.5\textwidth]{slike/Settings.png}
 \end{center}
-\caption{Spletno okno predstavlja stran z nastavitvami.}
+\caption{Spletno okno strani z nastavitvami.}
 \label{settings-wireframe}
 \end{figure}
 
@@ -984,7 +986,7 @@ Seznam lokacij je predstavljen v razdelku \sn{Locations} v oblike tabele. Vsako 
 Seznam naprav je predstavljen v razdelku \sn{Devices}. Seznam naprav lahko samo pregledujemo, saj so že pred-nastavljene v spletni aplikaciji.
 
 Seznam uporabnikov je predstavljen v razdelku \sn{Users}. 
-Administrator ima pri neodobrenih uporabnikih možnost odobritve s klikom na gumb \sn{Approve}, ostali uporabniki ne vidijo tega stolpca. 
+Administrator ima pri neodobrenih uporabnikih možnost odobritve s klikom na gumb \sn{Approve}, ostalim uporabnikom pa se ta stolpec ne prikaže.
 
 
 
@@ -992,7 +994,7 @@ Administrator ima pri neodobrenih uporabnikih možnost odobritve s klikom na gum
 
 Spletna stran je narejena z odprtokodnim ogrodjem Laravel \cite{laravel-main-page}, ki temelji na programskem jeziku PHP \cite{php-jezik}. Ogrodje je arhitekturno zasnovano po vzorcu MVC. 
 
-Princip arhitekturnega vzorca MVC temelji na delitvi aplikacije na tri medsebojno povezane komponente. Model (ang. model) ima odgovornost za podatke, kontroler (ang. controller) vsebuje poslovno logiko in pogled (ang. view) skrbi za prikaz podatkov uporabniku \cite{poglavje_laravel_mvc}.
+Princip arhitekturnega vzorca MVC temelji na delitvi aplikacije na tri medsebojno povezane komponente. Model (ang. model) ima odgovornost za podatke, kontroler (ang. controller) vsebuje poslovno logiko in pogled (ang. view), ki skrbi za prikaz podatkov uporabniku \cite{poglavje_laravel_mvc}.
 
 Slika~\ref{mvc-laravel} prikazuje tok MVC v ogrodju Laravel. Prične se z uporabniškim zahtevkom (ang. request), ki potuje preko usmerjevalnika oziroma naslova URL (ang. route) do kontrolerja. Kontroler običajno pridobi podatke iz podatkovne baze preko modela. Vsa komunikacija od kontrolerja potuje tudi v obratni smeri do pogleda, kjer se uporabniku prikažejo podatki. 
 
@@ -1006,7 +1008,7 @@ Slika~\ref{mvc-laravel} prikazuje tok MVC v ogrodju Laravel. Prične se z uporab
 
 \clearpage
 
-Dinamični deli aplikacije delujejo po principu spletne storitve REST. Za upravljanje in prikaz dinamičnih delov uporabniku so nam v pomoč različne knjižnice JavaScript kot na primer bootstrap-table.js \cite{bootstraptable} za prikaz podatkov v tabeli in hightcharts.js \cite{hightchars-js} za prikaz podatkov v grafu.
+Dinamični deli aplikacije delujejo po principu spletne storitve REST. Za upravljanje in prikaz dinamičnih delov uporabniku so nam v pomoč različne knjižnice JavaScript, kot na primer bootstrap-table.js \cite{bootstraptable} za prikaz podatkov v tabeli in hightcharts.js \cite{hightchars-js} za prikaz podatkov v grafu.
 
 
 
@@ -1027,7 +1029,7 @@ Za implementacijo tabel smo si pomagali s tehnologijo Migrations znotraj ogrodja
 
 \clearpage
 
-Primer programske kode za kreiranje tabele uporabnik s pomočjo tehnologije Migrations Laravel:
+Primer programske kode za kreiranje tabele Uporabnik s pomočjo tehnologije Migrations Laravel:
 
 \begin{lstlisting}[language=PHP, style=mystyle]
 class CreateUsersTable extends Migration {
@@ -1048,9 +1050,9 @@ class CreateUsersTable extends Migration {
 }
 \end{lstlisting}
 
-Ogrodje Laravel nam omogoča tudi vmesnik ukazne vrstice imenovane Artisan, ki nam olajša razvojno delo z številnimi uporabnimi ukazi, kot so ustvari kontroler (\verb=php artisan make:controller=), počisti predpomnilnik (\verb=php artisan cache:clear=), pokaži listo povezav (\verb=php artisan route:list=) \cite{laravel-artisan}.
+Ogrodje Laravel nam omogoča tudi vmesnik ukazne vrstice imenovane Artisan, ki nam olajša razvojno delo s številnimi uporabnimi ukazi, kot so ustvari kontroler (\verb=php artisan make:controller=), počisti predpomnilnik (\verb=php artisan cache:clear=), pokaži listo povezav (\verb=php artisan route:list=) \cite{laravel-artisan}.
 
-Tako smo tudi samo kreacijo tabel izvedli z vmesnikom Artisan ukazne vrstice \verb=php artisan migrate=.
+Tako smo s pomočjo vmesnika Artisan preko ukazne vrstice z ukazom \verb=php artisan migrate= ustvarili tabele.
 
 \newpage
 
@@ -1097,7 +1099,7 @@ V tabeli~\ref{tabela-url} je seznam in opis vseh usmerjevalnikov aplikacije.
 
 \section{Prijava, odjava, registracija in potrditev uporabnika}
 
-Funkcionalnosti povezane z avtentikacijo in avtorizacijo smo povezali v eno smiselno komponento MVC, ki vsebuje dva modela; uporabnik (ang. User) in pravilo (ang. Role), tri kotrolerje in poglede; prijava (\verb=LoginController=, \verb=login.blade.php=), registracija (\verb=RegisterController=, \verb=register.blade.php=) in potrditev (\verb=ApprovalController=, \verb=approval.blade.php=).
+Funkcionalnosti povezane z avtentikacijo in avtorizacijo smo povezali v eno komponento MVC, ki vsebuje dva modela; uporabnik (ang. User) in pravilo (ang. Role), tri kotrolerje in poglede; prijava (\verb=LoginController=, \\ \verb=login.blade.php=), registracija (\verb=RegisterController=, \verb=register.blade.php=) in potrditev (\verb=ApprovalController=, \verb=approval.blade.php=).
 
 \begin{figure}[h]
 \begin{center}
@@ -1107,7 +1109,7 @@ Funkcionalnosti povezane z avtentikacijo in avtorizacijo smo povezali v eno smis
 \label{ss-registration-login}
 \end{figure}
 
-Uporabniki se morajo pred uporabo aplikacije najprej prijaviti ali registrirati (slika~\ref{ss-registration-login}). Novo registrirani uporabnik privzeto dobi vlogo obiskovalca. Le-tega pa mora administrator, pred nadaljnjo uporabo, odobriti.
+Uporabniki se morajo pred uporabo aplikacije najprej prijaviti ali registrirati (slika~\ref{ss-registration-login}). Novo registrirani uporabnik privzeto dobi vlogo obiskovalca, ki ga mora administrator, pred nadaljnjo uporabo, odobriti.
 
 Primer glavne funkcije potrditvenega kontrolerja:
 
@@ -1163,9 +1165,9 @@ Rezultat pogleda, kot ga vidi uporabnik, je prikazan na sliki~\ref{ss-approval}.
 \label{ss-obiskovalec}
 \end{figure}
 
-Po prijavi odobrenega uporabnika se odpre prva avtorizirana stran, ki tako kot vse preostale, vsebuje navigacijsko vrstico, logotip, prikazno sliko, ki ponazarja vlogo uporabnika, in povezavo do odjave. (slika~\ref{ss-obiskovalec} levo).
+Po prijavi odobrenega uporabnika se odpre prva avtorizirana stran, ki tako kot vse preostale, vsebuje navigacijsko vrstico, logotip, prikazno sliko, ki ponazarja vlogo uporabnika ter povezavo do odjave. (slika~\ref{ss-obiskovalec} levo).
 
-Uporabniki z vlogo obiskovalec vidijo drugačno navigacijsko vrstico, kot ostali uporabniki, saj imajo dostop omogočen samo do strni z meritvami (slika~\ref{ss-obiskovalec} desno). 
+Uporabniki z vlogo obiskovalec vidijo drugačno navigacijsko vrstico, kot ostali uporabniki, saj imajo dostop omogočen samo do strani z meritvami (slika~\ref{ss-obiskovalec} desno). 
 
 
 
@@ -1211,7 +1213,7 @@ private function parseTIDAFiles($data){
 \end{lstlisting}
 
 
-Na sliki~\ref{ss-import-data} smo v razdelku \sn{Define headers data} pri stolpcu \sn{light} iz izpustnega seznama izbrali \sn{--ignore--}, kar pomeni ignoriranje omenjene vrednosti pri uvozu v bazo. V spodnjem desnem delu je med drugim razvidno tudi, da gre za tip naprave TIDA, sami pa smo izbrali, da gre za produkt Ribe - tuna na lokaciji Hladilnik 1. S klikom na modri gumb \sn{Import Data} se meritev shrani.
+Na sliki~\ref{ss-import-data} smo v razdelku \sn{Define headers data} pri stolpcu \sn{light} iz spustnega seznama izbrali \sn{--ignore--}, kar pomeni, da omenjeno vrednost pri uvozu v bazo ne upoštevamo. V spodnjem desnem delu je med drugim razvidno tudi, da gre za tip naprave TIDA, sami pa smo izbrali, da gre za produkt Ribe - tuna na lokaciji Hladilnik 1. S klikom na modri gumb \sn{Import Data} se meritev shrani.
 
 
 \begin{figure}[h]
@@ -1231,7 +1233,7 @@ Na sliki~\ref{ss-import-data} smo v razdelku \sn{Define headers data} pri stolpc
 \label{ss-generate-data}
 \end{figure}
 
-Slika~\ref{ss-generate-data} prikazuje primer generiranja meritve pri kateri smo pod razdelkom \sn{Required data} izbrali produkt Piščanec – file, začetek meritve ob 16:36:54 dne 7.2.2020 z intervalom 3600 sekund, kar bo predstavljajo podatek o meritvi z intervalom ene ure. V nadaljevanju smo določili tri generirane sklope. Prvi vsebuje 100 zapisov z temperaturo 3 °C, vlažnostjo 33 \% na lokaciji Hladilnik 1, drugi 50 zapisov z temperaturo 6 °C, vlažnostjo 45 \% na lokaciji Hladilnik 2 in tretji 20 zapisov z temperaturo 2 °C, vlažnostjo 30 \% na lokaciji Hladilnik 1. S klikom na modri gumb \sn{Generate Data} se meritev shrani (slika~\ref{ss-import-success}).
+Slika~\ref{ss-generate-data} prikazuje primer generiranja meritve pri kateri smo pod razdelkom \sn{Required data} izbrali produkt Piščanec – file, začetek meritve ob 16:36:54 dne 7.2.2020 z intervalom 3600 sekund, kar bo predstavljajo podatek o meritvi z intervalom ene ure. V nadaljevanju smo določili tri generirane sklope. Prvi vsebuje 100 zapisov s temperaturo 3 °C, vlažnostjo 33 \% na lokaciji Hladilnik 1, drugi 50 zapisov s temperaturo 6 °C, vlažnostjo 45 \% na lokaciji Hladilnik 2 in tretji 20 zapisov s temperaturo 2 °C, vlažnostjo 30 \% na lokaciji Hladilnik 1. S klikom na modri gumb \sn{Generate Data} se meritev shrani (slika~\ref{ss-import-success}).
 
 
 \begin{figure}[h]
@@ -1253,11 +1255,33 @@ V primeru, da pri uvozu meritve uporabnik izbere napačen format datoteke, se po
 \end{figure}
 
 
-\section{Pregled, iskanje in filtriranje meritev}
+\section{Seznam, iskanje in filtriranje meritev}
+
+Funkcionalnost, ki je na voljo vsem uporabniškim vlogam, je seznam meritev. Iskanje specifičnih meritev nam olajšajo polja za iskanje ali filtriranje po produktu, lokaciji in napravi, ki se med seboj lahko dopolnjujejo.
+V primeru, da ne najdemo ustrezne meritve, s klikom na gumb \sn{Clear filters} počistimo iskalne in filtrirane rezultate (slika~\ref{ss-records-page}).
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{slike/records_page_filtered_1.png}
+\end{center}
+\caption{Primer seznama meritev, ki je rezultat iskanja po ključni besedi \sn{2018} in filtriranju po produktu Govedo, lokaciji Hladilnik 2 ter napravi TIDA.}
+\label{ss-records-page}
+\end{figure}
+
+
+\section{Pregled podrobnosti in analiza meritve}
 
 Glavna funkcionalnost v spletni aplikaciji predstavlja pregled podrobnosti in vizualizacija z grafično analizo meritve. V njej prikažemo uvožene, izračunane, ugotovljene in predvidene podatke o izbrani meritvi v obliki alinej, tabel ali grafov. 
 
-Najprej izpišemo podatke iz datoteke, predstavimo tudi robne vrednosti, kot prikazuje slika~\ref{ss-record-page} v spodnjem delu desno.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{slike/record_page_11.png}
+\end{center}
+\caption{Del zaslonskega posnetka strani s podrobnostmi in analizo meritve.}
+\label{ss-record-page}
+\end{figure}
+
+Najprej izpišemo podatke iz datoteke, predstavimo tudi robne vrednosti, kot prikazuje slika~\ref{ss-record-page} spodaj desno.
 Robne vrednosti so zapisane v obliki tabele in določajo:
 \begin{itemize}
 	\item Limits – oznaka vrednosti, Value – dejanska vrednost, Count – število ponovitev,
@@ -1270,17 +1294,9 @@ Robne vrednosti so zapisane v obliki tabele in določajo:
 
 Levi del slike prikazuje ime osebe in čas od uvoza ter komentar meritve.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=\textwidth]{slike/record_page_11.png}
-\end{center}
-\caption{Del zaslonskega posnetka strani z analizo in podrobnosti meritve.}
-\label{ss-record-page}
-\end{figure}
+Na zeleni podlagi so izpisane splošne ugotovitve hladne verige iz podatkov. Podatek \sn{Measurements (Location, Time)} prikazuje čas meritve na posamezni lokaciji. Čas je zapisan v človeku berljivem načinu. Iz slike~\ref{ss-record-page} lahko razberemo, da je meritev bila izvedena na dveh lokacijah, in sicer Hladilnik 1 s časom 10 ur ter Hladilnik 2 s časom 5 ur. 
 
-Na zeleni podlagi so izpisane splošne ugotovitve hladne verige iz podatkov. Podatek \sn{Measurements (Location, Time)} prikazuje čas meritve na posamezni lokaciji. Čas je zapisan v človeku berljivem načinu. Iz slike~\ref{ss-record-page} lahko izberemo, da je meritev bila izvedena na dveh lokacijah, in sicer Hladilnik 1 s časom 10 ur ter Hladilnik 2 s časom 5 ur. 
-
-Spodaj je primer izvorne kode za izpis skupnega časa po lokacijah meritve. Metoda \verb=forHumans= je del knjižnice Carbon, ki služi kot razširitev programskemu jeziku PHP pri uporabi s časom (ang. DateTime) \cite{carbon-framework}:
+Spodaj je primer izvorne kode za izpis skupnega časa po lokacijah meritve. Metoda \verb=forHumans= je del knjižnice Carbon, ki služi kot razširitev programskemu jeziku PHP pri delu s časom (ang. DateTime) \cite{carbon-framework}:
 
 \begin{lstlisting}[language=PHP, style=mystyle]
 <div class="alert alert-success" role="alert">
@@ -1292,9 +1308,7 @@ Spodaj je primer izvorne kode za izpis skupnega časa po lokacijah meritve. Meto
 </div>
 \end{lstlisting}
 
-\clearpage
-
-Pod izpisom skupnega časa po lokacijah se izpiše podatek o preostali dobi uporabnosti živila po modelu CSIRO in modelu SAL. Podrobno o omenjenih dveh podatkih je opisano v naslednjem poglavju.
+Pod izpisom skupnega časa po lokacijah se izpiše podatek o preostali dobi uporabnosti živila po modelu CSIRO in modelu SAL. Podroben opis o omenjenih dveh podatkih je v naslednjem poglavju.
 
 V primeru, da meritev vsebuje opozorila, se nam le-ta izpišejo na rdeči podlagi. Podatek \sn{Temperature is out of range} kot območje prikaže čas pri katerem je bilo živilo izven priporočenih temperatur hranjenja. V primeru na sliki~\ref{ss-record-page} razberemo, da je bilo živilo 5 ur izven priporočenega območja temperature (od 0 °C do 4 °C). 
 Če meritev vsebuje neveljavne vrednosti relativne vlage, izpišemo število takih vzorcev pri podatku \sn{Relative humidity is incorrect}. Na sliki~\ref{ss-record-page} vidimo, da je en vzorec meritve vseboval vrednost manjšo od 0 \% ali večjo od 100 \%.
@@ -1309,8 +1323,9 @@ V primeru, da meritev vsebuje opozorila, se nam le-ta izpišejo na rdeči podlag
 \end{figure}
 
 V osrednjem delu strani s podrobnostjo meritve se nahaja graf, ki prikazuje podatke o temperaturi in relativni vlagi v odvisnosti od časa. Za grafom je prikazan tudi izpis omenjenih podatkov v obliki tabele.
-Na sliki~\ref{ss-record-page-zoom} vidimo, da smo označili časovni interval, ki ga želimo povečati. Z miško smo se ustavili na vrednosti, ki je prikazana v malem pojavnem oknu (čas 23:46, temperatura 24 °C, relativna vlaga 62 \%). V primeru, da želimo večjo preglednost, lahko s klikom na posamezno postavko v agendi na dnu grafa skrijemo vrednosti označene postavke.  
+Na sliki~\ref{ss-record-page-zoom} vidimo, da smo označili časovni interval, ki ga želimo povečati. S kurzorjem smo se ustavili na vrednosti, ki je prikazana v malem pojavnem oknu (čas 23:46, temperatura 24 °C, relativna vlaga 62 \%). V primeru, da želimo večjo preglednost, lahko s klikom na posamezno postavko v agendi na dnu grafa skrijemo vrednosti označene postavke.  
 
+\clearpage
 
 \section{Napoved preostale dobe uporabnosti izbranega živila}
 
@@ -1337,25 +1352,27 @@ public function getSl_SAL($sl, $sl_ref, $interval, $temperature){
 }
 \end{lstlisting}
 
-Za vsak zapis meritve kličemo zgornji funkciji s parametri preostale dobe uporabnosti (\verb=$sl=), interval beleženja (\verb=$interval=) in vrednost temperature (\verb=$temperature=). Pri modelu SAL dodatno še parameter referenčne dobe uporabnosti (\verb=$sl_ref=). Rezultat vsake funkcije je preostala doba uporabnosti.
+Za vsak temperaturni zapis meritve kličemo zgornji funkciji s parametri preostale dobe uporabnosti (\verb=$sl=), interval beleženja (\verb=$interval=) in vrednost temperature (\verb=$temperature=). Pri modelu SAL dodatno še parameter referenčne dobe uporabnosti (\verb=$sl_ref=). Rezultat vsake funkcije je preostala doba uporabnosti.
+
+\clearpage
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=\textwidth]{slike/record_page_333.png}
+\includegraphics[width=\textwidth]{slike/record_page_sl_final.png}
 \end{center}
-\caption{Zaslonski posnetek s podatki in grafom dobe uporabnosti.}
+\caption{Zaslonski posnetek s podatki in grafom dobe uporabnosti, ki je del strani s podrobnostmi in analizo meritve.}
 \label{ss-record-page-sl}
 \end{figure}
 
-Na sliki~\ref{ss-record-page-sl} v zgornjem odseku zaslonskega posnetka vidimo, da se graf dobe uporabnosti nanaša na živilo svinina (\sn{Shelf Life (SL) for product Svinina}), ki ima priporočeno temperaturo hranjenja med 0 in 4 °C (\sn{Storage T (°C)}) in referenčno dobo uporabnosti 11 dni (\sn{SL-Reference (Days)}).
+Na sliki~\ref{ss-record-page-sl} v zgornjem odseku zaslonskega posnetka vidimo, da se graf dobe uporabnosti nanaša na ribo brancin (\sn{Shelf Life (SL) for product Ribe - brancin}), ki ima priporočeno temperaturo hranjenja med 0 in 4 °C (\sn{Storage T (°C)}) in referenčno dobo uporabnosti 8 dni (\sn{SL-Reference (Days)}).
 
-Iz spustnega seznama smo izbrali, da je pred meritvijo minil en dan od takrat, ko smo meso pričeli spremljati in beležiti meritve. V tem primeru to pomeni, da predpostavljamo, da je bila svinina hranjena v območju priporočenih temperatur (\sn{SL-Used (Days)}).
+Iz spustnega seznama smo izbrali, da je pred meritvijo minil en dan od takrat, ko smo ribo pričeli spremljati in beležiti meritve. V tem primeru to pomeni, da predpostavljamo, da je bila riba hranjena v območju priporočenih temperatur (\sn{SL-Used (Days)}).
 
-Na grafu modro obarvano območje prikazuje temperaturo, turkizno modra črta dobo uporabnosti po modelu CSIRO in vijoličasta črta dobo uporabnosti po modelu SAL v odvisnosti od časa (x os na grafu).
+Na grafu modro obarvano območje prikazuje temperaturo, turkizno modra črta dobo uporabnosti po modelu CSIRO in vijoličasta črta dobo uporabnosti po modelu SAL v odvisnosti od časa (os X na grafu).
 
-Iz zgornjega primera lahko razberemo, da je doba uporabnosti živila vseskozi padala linearno navzdol. Pri vrednosti temperature približno 16 ºC je padala hitreje kot običajno. Doba uporabnosti pri modelu SAL je tam znašala nekoliko manj kot za model CSIRO.
+Iz zgornjega primera lahko razberemo, da je doba uporabnosti živila vseskozi padala linearno navzdol. Pri vrednosti temperature približno 12 ºC je padala hitreje kot običajno. Doba uporabnosti pri modelu CSIRO je tam znašala nekoliko manj kot pri modelu SAL.
 
-Na koncu meritve pa je preostala doba uporabnosti znašala 3 dni in 1 uro za model CSIRO in 1 dan 8 ur za model SAL (\sn{SL-Remain}).
+Na koncu meritve pa je preostala doba uporabnosti znašala 2 dni pri modelu CSIRO in 2 dni 5 ur pri modelu SAL (\sn{SL-Remain}).
 
 
 
@@ -1384,11 +1401,11 @@ V tabelaričnem pogledu so na strani z nastavitvami (\sn{Settings}) v drugem raz
 \begin{center}
 \includegraphics[width=0.9\textwidth]{slike/location_edit.png}
 \end{center}
-\caption{Primer dialoga za urejanje lokacije.}
+\caption{Primer okna za urejanje lokacije.}
 \label{ss-settings-location}
 \end{figure}
 
-Dialog iz slike~\ref{ss-settings-location} odpremo s klikom na ikono za urejanje pri posamezni lokaciji. Spreminjamo lahko podatke kot so ime (\sn{Name*}), območje delovne temperature (\sn{Storage T*}) in opcijsko opis lokacije. S klikom na gumb shrani (\sn{Save}) se zapre dialog in prikaže besedilo o uspešnosti shranitve.
+Okno, prikazano na sliki~\ref{ss-settings-location} odpremo s klikom na ikono za urejanje pri posamezni lokaciji. Spreminjamo lahko podatke kot so ime (\sn{Name*}), območje delovne temperature (\sn{Storage T*}) in opcijsko opis lokacije. S klikom na gumb shrani (\sn{Save}) se okno zapre in prikaže se besedilo o uspešnosti shranitve.
 
 
 \clearpage
@@ -1405,7 +1422,7 @@ Tako imamo v aplikaciji podprte naslednje tri tipe naprav: TIDA, RHT10 in Genera
 \begin{center}
 \includegraphics[width=\textwidth]{slike/devices.png}
 \end{center}
-\caption{Na strani z nastavitvami imamo pregled senzorskih naprav (\sn{Devices}).}
+\caption{Stran z nastavitvami s prelgledom senzorskih naprav (\sn{Devices}).}
 \label{ss-settings-devices}
 \end{figure}
 
@@ -1436,16 +1453,16 @@ Spletno aplikacijo smo najprej testirali v lokalnem okolju, kjer smo tudi razvij
 
 Pri testiranju smo si pomagali z orodjem za razvijalce, ki je del brskalnika Google Chroome (\sn{DevTools}). V njem smo preverjali zapis kode HTML in posamezne klice spletnih storitev \cite{google-devtools}.
 
-Testirali smo tudi s pomočjo paketa Dump Server, ki je del ogrodja Laravel. Omenjeni paket nam v ozadju delovanja aplikacije zbira podatke, ki smo jih v izvorni kodi določili za pošiljanje preko funkcije \verb=dump()=, in izpis preko ukazne vrstice \cite{laravel-dump}.
+Testirali smo tudi s pomočjo paketa Dump Server, ki je del ogrodja Laravel. Omenjeni paket nam v ozadju delovanja aplikacije zbira podatke, ki smo jih v izvorni kodi določili za pošiljanje preko funkcije \verb=dump()=, in izpiše preko ukazne vrstice \cite{laravel-dump}.
 
-Za vsebinsko testiranje meritev pa smo razvili posebno funkcionalnost. Simulirali smo podatke, ki jih vsebujejo meritvene datoteke preko generatorja podatkov, ki je bil podrobneje opisan v poglavju \ref{uvoz-in-generiranje-meritev}.
+Za vsebinsko testiranje meritev smo razvili posebno funkcionalnost - simuliranje podatkov, ki jih vsebujejo meritvene datoteke, preko generatorja podatkov, ki je bil podrobneje opisan v poglavju \ref{uvoz-in-generiranje-meritev}.
 
 
 \section{Postavitev aplikacije na testno okolje}
 
 Spletno aplikacijo smo prenesli na javno dostopno gostovanje z namenom, da jo lahko analizirajo tudi drugi uporabniki.
 
-Najprej smo v administrativnem vmesniku ponudnika gostovanja kreirali podatkovno bazo, kjer smo z pomočjo orodja \verb=phpMyAdmin= \cite{phpmyadmin-framework} uvozili podatkovno shemo in podatke iz lokalnega okolja (slika~\ref{ss-admim-gui}). Za tem smo preko protokola za prenos datotek (FTP) prenesli še ostale datoteke spletne strani.
+Najprej smo v administrativnem vmesniku ponudnika gostovanja kreirali podatkovno bazo, kjer smo s pomočjo orodja \verb=phpMyAdmin= \cite{phpmyadmin-framework} uvozili podatkovno shemo in podatke iz lokalnega okolja (slika~\ref{ss-admim-gui}). Za tem smo preko protokola za prenos datotek (FTP) prenesli še ostale datoteke spletne strani.
 
 \begin{figure}[h]
 \begin{center}
@@ -1459,7 +1476,7 @@ Najprej smo v administrativnem vmesniku ponudnika gostovanja kreirali podatkovno
 
 \chapter{Sklepne ugotovitve}
 
-V diplomskem delu smo razvili spletno aplikacijo za vnos, shranjevanje, analizo in vizualizacijo podatkov iz hladne verige. Za podatke, ki so v različnih podatkovnih formatih, smo uspešno razvili enoten uvoz podatkov z možnostjo konfiguracije posameznih senzorskih meritev. Razvili smo generator podatkov, ki pomaga uporabnikom pri ustvarjanju podatkov v simuliranih pogojih hladne verige za potrebe optimizacije procesa, hkrati pa nam je bil v pomoč pri samem testiranju aplikacije. 
+V diplomskem delu smo razvili spletno aplikacijo za vnos, shranjevanje, analizo in vizualizacijo podatkov iz hladne verige. Za podatke, ki so v različnih podatkovnih formatih, smo uspešno razvili enoten uvoz z možnostjo konfiguracije posameznih senzorskih meritev. Razvili smo generator podatkov, ki pomaga uporabnikom pri ustvarjanju podatkov v simuliranih pogojih hladne verige za potrebe optimizacije procesa, hkrati pa nam je bil v pomoč pri samem testiranju aplikacije. 
 
 Osrednja funkcionalnost aplikacije je pregled nad posamezno meritvijo, kjer uporabniku podrobno analiziramo in vizualiziramo ključne podatke ter po modelu CSIRO in SAL napovemo preostalo dobo uporabnosti. Izpostavili bi še nekaj funkcionalnosti, ki uporabnikom olajšajo uporabo aplikacije:
 
@@ -1467,7 +1484,7 @@ Osrednja funkcionalnost aplikacije je pregled nad posamezno meritvijo, kjer upor
 	\item omogočanje prijave, odjave, registracije in potrditve uporabnika,
 	\item tri uporabniške vloge glede na tip uporabe (administrator, urednik, obiskovalec),
 	\item možnost spreminjanja števila dni med meritvijo in izvora živila,
-	\item iskanje in filtriranje meritev,
+	\item seznam, iskanje in filtriranje meritev,
 	\item dodajanje, urejanje in brisanje živil,
 	\item dodajanje, urejanje in brisanje lokacij.
 \end{itemize}
@@ -1478,15 +1495,15 @@ Z izbiro ogrodja Laravel in spletne predloge HTML smo pohitrili razvoj, saj so b
 Naša spletna aplikacija uspešno rešuje zgoraj omenjene probleme iz področja senzorskih meritev hladne verige. Vidimo pa še kar nekaj možnosti za razširitev in uvedbo na omenjenem področju. Smiselno bi bilo nadaljevati z razvojem in razširiti trenutne funkcionalnosti z naslednjimi:
 
 \begin{itemize}
-	\item poleg ročnega uvoza meritev bi lahko imela aplikacija povezavo z ostalimi podatkovnimi bazami ali spletnimi storitvami s področja hladne verige,
+	\item poleg ročnega uvoza meritev se lahko doda povezavo z ostalimi podatkovnimi bazami ali spletnimi storitvami s področja hladne verige,
 
-	\item pri dobi uporabnosti živila, bi lahko aplikacija sama preračunala preostalo dobo uporabnosti glede na trenutni dan ogleda meritve,
+	\item pri dobi uporabnosti živila bi lahko aplikacija sama preračunala preostalo dobo uporabnosti glede na trenutni dan ogleda meritve,
 
-	\item pri napovedovanju preostale dobe uporabnosti živila bi lahko upoštevali še mikrobiološke podatke živila,
+	\item pri napovedovanju preostale dobe uporabnosti živila se lahko upošteva še mikrobiološke podatke živila,
 
-	\item pri analizi meritve, bi lahko sistem sam ugotovil različne lokacije, glede na izmerjene vrednosti temperatur,
+	\item pri analizi meritve bi lahko sistem sam ugotovil različne lokacije glede na izmerjene vrednosti temperatur,
 
-	\item na grafu meritve bi lahko prikazali še območje priporočene temperature hranjenja živila,
+	\item na grafu meritve se prikaže še območje priporočene temperature hranjenja živila,
 
 	\item dodali bi urejanje uporabniških podatkov kot so: ime, priimek in e-pošta.
 \end{itemize}
